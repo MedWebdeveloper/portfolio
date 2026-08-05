@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zenith (ZNT) — Reach the Peak of DeFi</title>
+<meta name="description" content="Zenith is a next-generation DeFi token. Stake, trade, and grow at the summit of decentralized finance.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="assets/zenith-logo.png">
+</head>
+<body>
+<div class="grid-overlay"></div>
+
+<!-- SVG logo definition (reusable gradient) -->
+<svg width="0" height="0" style="position:absolute"><defs>
+  <linearGradient id="znt-grad" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#7C3AED"/><stop offset="1" stop-color="#22D3EE"/>
+  </linearGradient>
+</defs></svg>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="brand">
+      <svg class="brand-logo" viewBox="0 0 48 48" fill="none">
+        <path d="M24 4 L44 40 L34 40 L24 20 L14 40 L4 40 Z" fill="url(#znt-grad)"/>
+        <path d="M24 22 L33 40 L27 40 L24 33 L21 40 L15 40 Z" fill="url(#znt-grad)" opacity=".6"/>
+      </svg>
+      Zenith
+    </a>
+    <ul class="nav-links">
+      <li><a href="#features">Features</a></li>
+      <li><a href="#tokenomics">Tokenomics</a></li>
+      <li><a href="#roadmap">Roadmap</a></li>
+      <li><a href="blog/index.html">Blog</a></li>
+      <li><a href="dashboard.html">Dashboard</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="blog/index.html" class="btn btn-ghost">Learn</a>
+      <a href="dashboard.html" class="btn btn-primary">Launch App</a>
+      <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-drawer" id="drawer">
+  <button class="close" id="drawerClose">&times;</button>
+  <a href="#features">Features</a>
+  <a href="#tokenomics">Tokenomics</a>
+  <a href="#roadmap">Roadmap</a>
+  <a href="blog/index.html">Blog</a>
+  <a href="dashboard.html" class="btn btn-primary">Launch App</a>
+</div>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="container">
+    <img src="assets/zenith-logo-t.png" alt="Zenith" class="hero-logo-glow">
+    <div class="eyebrow"><span class="dot"></span> Live on Mainnet · Audited by CertiK</div>
+    <h1>Reach the <span class="gradient-text">Zenith</span><br>of Decentralized Finance</h1>
+    <p>Stake, trade and grow your assets on the fastest, most secure DeFi protocol. One token to reach the summit.</p>
+    <div class="hero-cta">
+      <a href="dashboard.html" class="btn btn-primary btn-lg">Launch App →</a>
+      <a href="#tokenomics" class="btn btn-ghost btn-lg">Read Whitepaper</a>
+    </div>
+  </div>
+
+  <!-- price ticker -->
+  <div class="ticker">
+    <div class="ticker-track" id="ticker"></div>
+  </div>
+</header>
+
+<!-- STATS -->
+<section class="section" style="padding-top:40px">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat glass reveal"><div class="val gradient-text" id="statPrice">$3.42</div><div class="lbl">ZNT Price</div></div>
+      <div class="stat glass reveal"><div class="val gradient-text">$842M</div><div class="lbl">Market Cap</div></div>
+      <div class="stat glass reveal"><div class="val gradient-text">$1.9B</div><div class="lbl">Total Value Locked</div></div>
+      <div class="stat glass reveal"><div class="val gradient-text">312K+</div><div class="lbl">Holders</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="section" id="features">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow"><span class="dot"></span> Why Zenith</div>
+      <h2>Built for the <span class="gradient-text">summit</span></h2>
+      <p>Everything you need to trade, earn and build — with institutional-grade security and lightning speed.</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature glass reveal"><div class="ic">⚡</div><h3>Instant Swaps</h3><p>Sub-second settlement with near-zero fees powered by our Layer-2 rollup engine.</p></div>
+      <div class="feature glass reveal"><div class="ic">🛡️</div><h3>Bank-Grade Security</h3><p>Audited smart contracts, multi-sig treasury and a $10M insurance fund protecting every holder.</p></div>
+      <div class="feature glass reveal"><div class="ic">📈</div><h3>Staking up to 18% APY</h3><p>Put your ZNT to work. Flexible and locked staking pools with auto-compounding rewards.</p></div>
+      <div class="feature glass reveal"><div class="ic">🌉</div><h3>Cross-Chain Bridge</h3><p>Move assets seamlessly across Ethereum, BNB, Solana and Polygon in a single click.</p></div>
+      <div class="feature glass reveal"><div class="ic">🗳️</div><h3>DAO Governance</h3><p>Every ZNT is a vote. Shape the protocol's future through on-chain proposals.</p></div>
+      <div class="feature glass reveal"><div class="ic">🤖</div><h3>Smart Portfolio</h3><p>AI-assisted insights and automated strategies to optimize your yield 24/7.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- TOKENOMICS -->
+<section class="section" id="tokenomics">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow"><span class="dot"></span> Tokenomics</div>
+      <h2>Transparent by <span class="gradient-text">design</span></h2>
+      <p>1,000,000,000 ZNT total supply. Fair distribution, deflationary burn, long-term aligned.</p>
+    </div>
+    <div class="token-wrap glass reveal" style="padding:44px">
+      <div class="donut-wrap">
+        <canvas id="tokenChart" width="300" height="300"></canvas>
+        <div class="donut-center"><div class="big gradient-text">1B</div><div class="small">Total ZNT</div></div>
+      </div>
+      <ul class="legend">
+        <li><span class="swatch" style="background:#7C3AED"></span><span class="name">Community & Ecosystem</span><span class="pct">40%</span></li>
+        <li><span class="swatch" style="background:#22D3EE"></span><span class="name">Staking Rewards</span><span class="pct">22%</span></li>
+        <li><span class="swatch" style="background:#A78BFA"></span><span class="name">Team & Advisors (4y vest)</span><span class="pct">15%</span></li>
+        <li><span class="swatch" style="background:#67E8F9"></span><span class="name">Treasury / DAO</span><span class="pct">13%</span></li>
+        <li><span class="swatch" style="background:#4C1D95"></span><span class="name">Private & Seed</span><span class="pct">10%</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ROADMAP -->
+<section class="section" id="roadmap">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow"><span class="dot"></span> Roadmap</div>
+      <h2>The climb to the <span class="gradient-text">peak</span></h2>
+      <p>Our journey from launch to becoming a top-tier DeFi ecosystem.</p>
+    </div>
+    <div class="roadmap">
+      <div class="rm-item left done reveal"><div class="rm-card glass"><div class="phase">✓ Q1 2024 — Base Camp</div><h4>Genesis Launch</h4><p>Token launch, CEX/DEX listings, CertiK audit, 50K holders milestone.</p></div><div class="rm-node"></div></div>
+      <div class="rm-item right done reveal"><div class="rm-node"></div><div class="rm-card glass"><div class="phase">✓ Q3 2024 — Ascent</div><h4>Staking & Bridge</h4><p>Native staking pools live, cross-chain bridge to 4 networks, mobile app beta.</p></div></div>
+      <div class="rm-item left reveal"><div class="rm-card glass"><div class="phase">Q2 2025 — Ridge</div><h4>DAO Governance</h4><p>Full on-chain governance, treasury diversification and grants program.</p></div><div class="rm-node"></div></div>
+      <div class="rm-item right reveal"><div class="rm-node"></div><div class="rm-card glass"><div class="phase">Q4 2025 — Summit</div><h4>Zenith L2 Mainnet</h4><p>Launch of our own high-throughput Layer-2, on-ramp partnerships, 1M holders.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section">
+  <div class="container">
+    <div class="cta-band reveal">
+      <h2>Ready to reach your <span class="gradient-text">Zenith</span>?</h2>
+      <p>Join 312,000+ holders building the future of finance.</p>
+      <div class="hero-cta">
+        <a href="dashboard.html" class="btn btn-primary btn-lg">Launch App →</a>
+        <a href="blog/index.html" class="btn btn-ghost btn-lg">Explore the Blog</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" id="faq">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow"><span class="dot"></span> FAQ</div>
+      <h2>Questions, <span class="gradient-text">answered</span></h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item"><div class="faq-q">What is Zenith (ZNT)?<span class="ico">+</span></div><div class="faq-a">Zenith is a decentralized finance protocol and its native utility token, ZNT. It powers swaps, staking, governance and cross-chain transfers within the Zenith ecosystem.</div></div>
+      <div class="faq-item"><div class="faq-q">How do I buy ZNT?<span class="ico">+</span></div><div class="faq-a">You can buy ZNT directly in our dashboard, or on major exchanges. Connect your wallet, swap ETH/USDT for ZNT, and you're ready to stake or trade.</div></div>
+      <div class="faq-item"><div class="faq-q">Is Zenith audited?<span class="ico">+</span></div><div class="faq-a">Yes. All smart contracts are audited by CertiK, and we maintain a $10M insurance fund plus a public bug-bounty program.</div></div>
+      <div class="faq-item"><div class="faq-q">What returns can I earn from staking?<span class="ico">+</span></div><div class="faq-a">Staking APY ranges from 6% (flexible) up to 18% (locked pools), with rewards auto-compounding and distributed on-chain.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a href="index.html" class="brand">
+          <svg class="brand-logo" viewBox="0 0 48 48"><path d="M24 4 L44 40 L34 40 L24 20 L14 40 L4 40 Z" fill="url(#znt-grad)"/></svg>
+          Zenith
+        </a>
+        <p class="brand-desc">The peak of decentralized finance. Stake, trade and grow with confidence.</p>
+      </div>
+      <div><h5>Product</h5><ul><li><a href="dashboard.html">Dashboard</a></li><li><a href="#features">Features</a></li><li><a href="#tokenomics">Tokenomics</a></li><li><a href="dashboard.html">Staking</a></li></ul></div>
+      <div><h5>Resources</h5><ul><li><a href="blog/index.html">Blog</a></li><li><a href="#faq">FAQ</a></li><li><a href="#">Whitepaper</a></li><li><a href="#">Docs</a></li></ul></div>
+      <div><h5>Community</h5><ul><li><a href="#">Twitter / X</a></li><li><a href="#">Discord</a></li><li><a href="#">Telegram</a></li><li><a href="#">GitHub</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Zenith Protocol. Built by Médard Kiteretse.</span>
+      <div class="socials">
+        <a href="#" aria-label="Twitter">𝕏</a>
+        <a href="#" aria-label="Discord">◈</a>
+        <a href="#" aria-label="Telegram">✈</a>
+        <a href="#" aria-label="GitHub">⌥</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

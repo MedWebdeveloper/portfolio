@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Médard Kiteretse — Portfolio | UI/UX & Front-End Designer</title>
+<meta name="description" content="Portfolio de Médard Kiteretse, Front-End & UI/UX Designer. Projets web, Figma, Illustrator et Adobe XD.">
+<link rel="canonical" href="https://medwebdeveloper.github.io/portfolio/fr/">
+<!-- Open Graph / partage réseaux sociaux -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Médard Kiteretse — Designer UI/UX & Front-End">
+<meta property="og:description" content="Designer Front-End & UI/UX basé à London, ON. 8+ études de cas en design web et UI/UX mobile.">
+<meta property="og:url" content="https://medwebdeveloper.github.io/portfolio/fr/">
+<meta property="og:image" content="https://medwebdeveloper.github.io/portfolio/fr/images/avatar.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="blob b1"></div>
+<div class="blob b2"></div>
+<div class="blob b3"></div>
+
+<!-- ============ NAVBAR ============ -->
+<header class="navbar" id="navbar">
+  <div class="container nav-inner">
+    <a href="#home" class="logo">Médard<span>.</span></a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#home" class="nav-close-on-click">Accueil</a>
+      <a href="#about" class="nav-close-on-click">À propos</a>
+      <a href="#work" class="nav-close-on-click">Travaux</a>
+      <a href="#skills" class="nav-close-on-click">Compétences</a>
+      <a href="#contact" class="btn btn-primary nav-cta nav-close-on-click">Me contacter</a>
+      <a href="../index.html" class="lang-switch nav-close-on-click" title="English version">🇬🇧 EN</a>
+    </nav>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="home">
+  <div class="container hero-grid">
+    <div class="hero-text reveal">
+      <span class="hero-eyebrow"><span class="dot"></span> Disponible pour de nouveaux projets</span>
+      <h1>Je conçois des <span class="grad-text">expériences digitales</span> qui marquent les esprits.</h1>
+      <p class="lead">Front-End &amp; UI/UX Designer basé à London, Ontario. Je transforme des idées en interfaces modernes, intuitives et responsives — du wireframe Figma jusqu'au code.</p>
+      <div class="hero-actions">
+        <a href="#work" class="btn btn-primary">Voir mes travaux →</a>
+        <a href="#contact" class="btn btn-outline">Travaillons ensemble</a>
+      </div>
+      <div class="hero-stats">
+        <div><div class="num grad-text">9+</div><div class="lbl">Projets réalisés</div></div>
+        <div><div class="num grad-text">3+</div><div class="lbl">Années de pratique</div></div>
+        <div><div class="num grad-text">100%</div><div class="lbl">Passion design</div></div>
+      </div>
+    </div>
+    <div class="hero-visual reveal">
+      <div class="avatar-ring"><img src="images/avatar.jpg" alt="Médard Kiteretse"></div>
+      <div class="floating-badge fb1"><span class="ic">🎨</span>UI/UX</div>
+      <div class="floating-badge fb2"><span class="ic">💻</span>Front-End</div>
+      <div class="floating-badge fb3"><span class="ic">✏️</span>Figma</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="section" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-photo reveal">
+        <img src="images/profile-photo.jpg" alt="Médard Kiteretse">
+      </div>
+      <div class="about-text reveal">
+        <span class="section-tag">À propos de moi</span>
+        <h3>Designer front-end passionné par le détail et l'expérience utilisateur.</h3>
+        <p>Front-End &amp; UI/UX Designer formé en développement logiciel, technologies web et conception centrée utilisateur. Je maîtrise HTML, CSS, JavaScript, PHP, Java, Python, SQL, Figma, Adobe XD et le responsive design.</p>
+        <p>À travers mes stages et projets académiques, j'ai créé des interfaces modernes, des wireframes et des applications web interactives. Mon objectif : allier esthétique et fonctionnalité pour des produits qui plaisent aux utilisateurs et aux clients.</p>
+        <ul class="about-info">
+          <li><span class="k">Nom</span> Médard Kiteretse</li>
+          <li><span class="k">Localisation</span> London, ON, Canada</li>
+          <li><span class="k">Rôle</span> UI/UX &amp; Front-End Designer</li>
+          <li><span class="k">Langues</span> Français, Anglais</li>
+        </ul>
+        <a href="#contact" class="btn btn-primary" style="margin-top:28px">Discutons de votre projet</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WORK ============ -->
+<section class="section" id="work">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-tag">Portfolio</span>
+      <h2>Mes <span class="grad-text">travaux</span> &amp; case studies</h2>
+      <p>Une sélection de mes projets en design web, UI/UX, Illustrator et Adobe XD. Cliquez pour découvrir chaque étude de cas.</p>
+    </div>
+
+    <div class="filters reveal">
+      <button class="filter-btn active" data-filter="all">Tout</button>
+      <button class="filter-btn" data-filter="web">Sites Web</button>
+      <button class="filter-btn" data-filter="uiux">UI/UX &amp; Apps Mobiles</button>
+    </div>
+
+    <div class="projects-grid" id="projectsGrid"><!-- injected by JS --></div>
+  </div>
+</section>
+
+<!-- ============ SKILLS ============ -->
+<section class="section" id="skills">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-tag">Expertise</span>
+      <h2>Mes <span class="grad-text">compétences</span></h2>
+      <p>Les outils et technologies que j'utilise pour donner vie aux projets.</p>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-card reveal">
+        <div class="skill-icon">🎨</div>
+        <h3>UI/UX &amp; Design</h3>
+        <p>Wireframes, prototypes interactifs et interfaces centrées utilisateur.</p>
+        <ul class="skill-bars">
+          <li><div class="row"><span>Figma</span><span>95%</span></div><div class="bar"><span data-w="95%"></span></div></li>
+          <li><div class="row"><span>Adobe XD</span><span>90%</span></div><div class="bar"><span data-w="90%"></span></div></li>
+          <li><div class="row"><span>Illustrator</span><span>85%</span></div><div class="bar"><span data-w="85%"></span></div></li>
+        </ul>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-icon">💻</div>
+        <h3>Front-End</h3>
+        <p>Interfaces web modernes, responsives et animées.</p>
+        <ul class="skill-bars">
+          <li><div class="row"><span>HTML5 / CSS3</span><span>95%</span></div><div class="bar"><span data-w="95%"></span></div></li>
+          <li><div class="row"><span>JavaScript</span><span>85%</span></div><div class="bar"><span data-w="85%"></span></div></li>
+          <li><div class="row"><span>Responsive Design</span><span>92%</span></div><div class="bar"><span data-w="92%"></span></div></li>
+        </ul>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-icon">⚙️</div>
+        <h3>Programmation</h3>
+        <p>Bases de données et logique côté serveur.</p>
+        <ul class="skill-bars">
+          <li><div class="row"><span>PHP &amp; MySQL</span><span>80%</span></div><div class="bar"><span data-w="80%"></span></div></li>
+          <li><div class="row"><span>Python</span><span>78%</span></div><div class="bar"><span data-w="78%"></span></div></li>
+          <li><div class="row"><span>Java / SQL</span><span>75%</span></div><div class="bar"><span data-w="75%"></span></div></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="section" id="contact">
+  <div class="container">
+    <div class="contact-wrap reveal">
+      <span class="section-tag">Contact</span>
+      <h2>Créons quelque chose <span class="grad-text">d'exceptionnel</span></h2>
+      <p>Vous avez un projet de site web, d'application ou de design ? Discutons-en — je serais ravi de collaborer avec vous.</p>
+      <div class="contact-actions">
+        <a href="mailto:kiteretsemedard@gmail.com" class="btn btn-primary">✉️ kiteretsemedard@gmail.com</a>
+        <a href="https://www.behance.net/kiteretsemdard" target="_blank" rel="noopener" class="btn btn-outline">Voir mon Behance ↗</a>
+      </div>
+      <div class="socials">
+        <a href="https://www.behance.net/kiteretsemdard" target="_blank" rel="noopener" class="social-btn" title="Behance">Bē</a>
+        <a href="https://www.linkedin.com/in/medard-kiteretse" target="_blank" rel="noopener" class="social-btn" title="LinkedIn">in</a>
+        <a href="mailto:kiteretsemedard@gmail.com" class="social-btn" title="Email">@</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="logo">Médard<span style="color:var(--secondary)">.</span></div>
+    <p>© <span id="year"></span> Médard Kiteretse — UI/UX &amp; Front-End Designer. Conçu avec passion.</p>
+  </div>
+</footer>
+
+<!-- ============ MODAL ============ -->
+<div class="modal-overlay" id="modal">
+  <div class="modal-card">
+    <div class="modal-hero">
+      <img id="mImg" src="" alt="">
+      <button class="modal-close" id="mClose" aria-label="Fermer">✕</button>
+    </div>
+    <div class="modal-body">
+      <span class="modal-cat" id="mCat"></span>
+      <h2 id="mTitle"></h2>
+      <p id="mDesc"></p>
+      <div class="modal-meta">
+        <div><div class="k">Type</div><div class="v" id="mType"></div></div>
+        <div><div class="k">Outils</div><div class="v" id="mTools"></div></div>
+        <div><div class="k">Année</div><div class="v" id="mYear"></div></div>
+      </div>
+      <p id="mChallenge"></p>
+      <div class="modal-tags" id="mTags"></div>
+
+      <div class="gallery-block" id="galleryBlock">
+        <h3 class="gallery-title">📸 Aperçu du projet</h3>
+        <div class="gallery-grid" id="mGallery"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Lightbox plein écran pour les images de la galerie -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lbClose" aria-label="Fermer">✕</button>
+  <button class="lightbox-nav lightbox-prev" id="lbPrev" aria-label="Précédent">‹</button>
+  <img id="lbImg" src="" alt="">
+  <button class="lightbox-nav lightbox-next" id="lbNext" aria-label="Suivant">›</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

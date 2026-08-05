@@ -1,0 +1,325 @@
+/* =========================================================
+   TID Store — Shoe Shop
+   Built from scratch (HTML/CSS/vanilla JS) by Médard Kiteretse
+   Bold, colorful sport & outdoor footwear e-commerce
+   ========================================================= */
+
+:root{
+  --red:#e01919;
+  --red-dark:#b30f0f;
+  --yellow:#f5c518;
+  --yellow-soft:#ffd83d;
+  --coral:#ff4f7b;
+  --coral-dark:#ff2f63;
+  --magenta:#e81ec4;
+  --magenta-2:#ff2fd0;
+  --blue:#2b4bff;
+  --blue-2:#4361ff;
+  --neon:#39ff7a;
+  --purple:#7b1fa2;
+  --ink:#0f0f14;
+  --ink-2:#1b1b22;
+  --gray:#e9e9ee;
+  --gray-2:#d6d6de;
+  --gray-text:#5a5a66;
+  --white:#ffffff;
+  --radius:18px;
+  --radius-lg:28px;
+  --shadow:0 18px 45px rgba(15,15,20,.14);
+  --shadow-sm:0 8px 22px rgba(15,15,20,.10);
+  --font:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  --display:'Archivo',system-ui,sans-serif;
+  --maxw:1180px;
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--font);
+  color:var(--ink);
+  background:var(--white);
+  line-height:1.6;
+  overflow-x:hidden;
+}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+
+.container{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 22px}
+
+/* ---------- return chip (back to portfolio) ---------- */
+.return-chip{
+  position:fixed;top:16px;left:16px;z-index:120;
+  display:inline-flex;align-items:center;gap:8px;
+  padding:9px 15px;border-radius:999px;
+  background:rgba(15,15,20,.82);backdrop-filter:blur(8px);
+  color:#fff;font-size:.82rem;font-weight:600;
+  box-shadow:var(--shadow-sm);transition:.25s;
+}
+.return-chip:hover{background:var(--ink);transform:translateX(-3px)}
+.return-chip i{font-size:.75rem}
+
+/* ---------- top bar ---------- */
+.topbar{
+  background:var(--ink);color:#fff;font-size:.8rem;
+  padding:8px 0;text-align:center;letter-spacing:.3px;
+}
+.topbar b{color:var(--yellow)}
+
+/* ---------- header ---------- */
+.header{
+  position:sticky;top:0;z-index:100;
+  background:rgba(255,255,255,.92);backdrop-filter:blur(12px);
+  border-bottom:1px solid #eee;transition:.3s;
+}
+.header.scrolled{box-shadow:0 6px 24px rgba(0,0,0,.08)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:70px}
+.brand{display:flex;align-items:center;gap:10px;font-family:var(--display);font-weight:800;font-size:1.35rem;letter-spacing:-.5px}
+.brand .logo{
+  width:36px;height:36px;border-radius:10px;
+  background:linear-gradient(135deg,var(--red),var(--coral));
+  display:grid;place-items:center;color:#fff;font-size:1rem;
+  box-shadow:0 6px 16px rgba(224,25,25,.35);
+}
+.brand span{color:var(--red)}
+.menu{display:flex;align-items:center;gap:28px}
+.menu a{font-weight:500;font-size:.95rem;position:relative;padding:4px 0;transition:.2s}
+.menu a::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:2px;background:var(--red);transition:.25s}
+.menu a:hover{color:var(--red)}
+.menu a:hover::after{width:100%}
+.nav-actions{display:flex;align-items:center;gap:16px}
+.icon-btn{position:relative;font-size:1.1rem;color:var(--ink);cursor:pointer;transition:.2s}
+.icon-btn:hover{color:var(--red)}
+.cart-count{
+  position:absolute;top:-8px;right:-9px;background:var(--coral);color:#fff;
+  font-size:.62rem;font-weight:700;min-width:16px;height:16px;border-radius:999px;
+  display:grid;place-items:center;padding:0 4px;
+}
+.burger{display:none;font-size:1.3rem;cursor:pointer;background:none;border:none;color:var(--ink)}
+
+/* ---------- hero (Running Shoes) ---------- */
+.hero{
+  position:relative;background:linear-gradient(120deg,var(--red) 0%,var(--red-dark) 100%);
+  color:#fff;overflow:hidden;
+}
+.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 80% 20%,rgba(255,255,255,.12),transparent 55%)}
+.hero-inner{display:grid;grid-template-columns:1fr 1.15fr;align-items:center;gap:20px;min-height:520px;position:relative;z-index:2}
+.hero-copy .eyebrow{
+  display:inline-block;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.3);
+  padding:6px 14px;border-radius:999px;font-size:.75rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-bottom:18px;
+}
+.hero-copy h1{
+  font-family:var(--display);font-weight:800;line-height:.95;
+  font-size:clamp(2.8rem,6.5vw,5rem);letter-spacing:-1.5px;margin-bottom:18px;
+}
+.hero-copy p{font-size:1.05rem;max-width:430px;opacity:.92;margin-bottom:28px}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+.hero-shoes{position:relative;height:100%;min-height:420px}
+.hero-shoes img{
+  position:absolute;filter:drop-shadow(0 26px 30px rgba(0,0,0,.4));
+  animation:float 5s ease-in-out infinite;
+}
+.hero-shoes img.s1{width:78%;top:6%;left:-4%;transform:rotate(-8deg);z-index:2}
+.hero-shoes img.s2{width:70%;bottom:2%;right:-2%;transform:rotate(6deg);animation-delay:.8s}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-16px)}}
+.hero-shoes img.s1{animation-name:float1}
+@keyframes float1{0%,100%{transform:translateY(0) rotate(-8deg)}50%{transform:translateY(-16px) rotate(-8deg)}}
+.hero-shoes img.s2{animation-name:float2}
+@keyframes float2{0%,100%{transform:translateY(0) rotate(6deg)}50%{transform:translateY(-14px) rotate(6deg)}}
+
+/* buttons */
+.btn{
+  display:inline-flex;align-items:center;gap:9px;
+  padding:13px 26px;border-radius:999px;font-weight:600;font-size:.95rem;
+  cursor:pointer;border:none;transition:.22s;white-space:nowrap;
+}
+.btn-buy{background:var(--magenta);color:#fff;box-shadow:0 10px 24px rgba(232,30,196,.4)}
+.btn-buy:hover{background:var(--magenta-2);transform:translateY(-3px)}
+.btn-coll{background:var(--blue);color:#fff;box-shadow:0 10px 24px rgba(43,75,255,.35)}
+.btn-coll:hover{background:var(--blue-2);transform:translateY(-3px)}
+.btn-light{background:#fff;color:var(--ink)}
+.btn-light:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(0,0,0,.25)}
+.btn-outline{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.6)}
+.btn-outline:hover{background:#fff;color:var(--red)}
+
+/* ---------- yellow showcase band ---------- */
+.band-yellow{
+  background:linear-gradient(180deg,var(--yellow),var(--yellow-soft));
+  position:relative;padding:60px 0;text-align:center;overflow:hidden;
+}
+.band-yellow .showcase{display:flex;align-items:center;justify-content:center;gap:40px;position:relative}
+.band-yellow .showcase img{width:min(340px,60%);filter:drop-shadow(0 22px 26px rgba(0,0,0,.22))}
+.play-badge{
+  position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+  width:78px;height:78px;border-radius:50%;border:4px solid #fff;
+  display:grid;place-items:center;color:#fff;font-size:1.4rem;
+  background:rgba(0,0,0,.12);backdrop-filter:blur(3px);
+}
+.band-yellow .tagline{margin-top:30px;font-family:var(--display);font-weight:800;font-size:clamp(1.5rem,4vw,2.4rem);color:var(--ink)}
+.band-yellow .progress{max-width:640px;height:7px;background:rgba(0,0,0,.15);border-radius:999px;margin:22px auto 0;overflow:hidden}
+.band-yellow .progress span{display:block;height:100%;width:25%;background:var(--red);border-radius:999px}
+
+/* ---------- section heading ---------- */
+.section{padding:80px 0}
+.section-head{text-align:center;max-width:640px;margin:0 auto 46px}
+.section-head .kicker{color:var(--red);font-weight:700;letter-spacing:2px;text-transform:uppercase;font-size:.78rem;margin-bottom:10px}
+.section-head h2{font-family:var(--display);font-weight:800;font-size:clamp(1.9rem,4.5vw,3rem);letter-spacing:-1px;line-height:1.05}
+.section-head p{color:var(--gray-text);margin-top:12px}
+
+/* ---------- category nav ---------- */
+.cats{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-bottom:44px}
+.cat-btn{
+  padding:11px 26px;border-radius:999px;font-weight:600;font-size:.9rem;cursor:pointer;
+  border:2px solid var(--coral);color:var(--coral);background:#fff;transition:.22s;
+}
+.cat-btn:hover{background:var(--coral);color:#fff}
+.cat-btn.active{background:var(--coral);color:#fff;box-shadow:0 10px 22px rgba(255,79,123,.35)}
+
+/* ---------- product grid ---------- */
+.products{display:grid;grid-template-columns:repeat(4,1fr);gap:26px}
+.card{
+  background:#fff;border-radius:var(--radius);overflow:hidden;
+  box-shadow:var(--shadow-sm);border:1px solid #f0f0f3;transition:.28s;
+  display:flex;flex-direction:column;position:relative;
+}
+.card:hover{transform:translateY(-8px);box-shadow:var(--shadow)}
+.card .thumb{position:relative;background:var(--gray);aspect-ratio:1/1;display:grid;place-items:center;overflow:hidden}
+.card .thumb img{width:88%;transition:.4s;filter:drop-shadow(0 12px 16px rgba(0,0,0,.18))}
+.card:hover .thumb img{transform:scale(1.08) rotate(-4deg)}
+.card .tag{
+  position:absolute;top:12px;left:12px;font-size:.68rem;font-weight:700;text-transform:uppercase;
+  letter-spacing:.5px;padding:5px 11px;border-radius:999px;color:#fff;
+}
+.tag.hot{background:var(--red)}
+.tag.onsale{background:var(--magenta)}
+.tag.trending{background:var(--blue)}
+.tag.arrivals{background:var(--coral)}
+.card .fav{
+  position:absolute;top:10px;right:10px;width:34px;height:34px;border-radius:50%;
+  background:#fff;display:grid;place-items:center;color:var(--gray-text);
+  box-shadow:var(--shadow-sm);cursor:pointer;transition:.2s;border:none;
+}
+.card .fav:hover,.card .fav.on{color:var(--coral)}
+.card .body{padding:18px 18px 20px;display:flex;flex-direction:column;gap:6px;flex:1}
+.card .cat-label{font-size:.72rem;color:var(--gray-text);text-transform:uppercase;letter-spacing:1px;font-weight:600}
+.card h3{font-weight:700;font-size:1.05rem;line-height:1.25}
+.card .stars{color:var(--yellow);font-size:.8rem;letter-spacing:1px}
+.card .price{display:flex;align-items:baseline;gap:8px;margin-top:2px}
+.card .price .now{font-family:var(--display);font-weight:800;font-size:1.25rem}
+.card .price .old{color:#b5b5bf;text-decoration:line-through;font-size:.85rem}
+.card .actions{display:flex;gap:8px;margin-top:12px}
+.card .actions .btn{flex:1;justify-content:center;padding:10px 12px;font-size:.82rem}
+
+/* ---------- split feature (Product Title + buttons) ---------- */
+.feature{background:var(--gray);border-radius:var(--radius-lg);overflow:hidden;display:grid;grid-template-columns:1fr 1fr;align-items:center}
+.feature .media{background:linear-gradient(135deg,#f2f2f6,#e2e2ea);aspect-ratio:4/3;display:grid;place-items:center;padding:24px}
+.feature .media img{width:80%;filter:drop-shadow(0 20px 24px rgba(0,0,0,.2))}
+.feature .txt{padding:40px}
+.feature .txt h3{font-family:var(--display);font-weight:800;font-size:clamp(1.6rem,3vw,2.3rem);line-height:1.05;margin-bottom:8px}
+.feature .txt .sub{color:var(--red);font-weight:700;margin-bottom:14px;font-size:1.05rem}
+.feature .txt p{color:var(--gray-text);margin-bottom:22px}
+.feature .txt .actions{display:flex;gap:12px;flex-wrap:wrap}
+
+/* alternate colored split for About */
+.feature.gradient .media{background:linear-gradient(125deg,#ff8a00 0%,var(--coral) 100%)}
+
+/* ---------- hiking band (coral) ---------- */
+.band-coral{
+  background:linear-gradient(120deg,var(--coral) 0%,#c81e77 100%);
+  color:#fff;overflow:hidden;position:relative;
+}
+.band-coral .hero-inner{min-height:460px}
+.band-coral .hero-copy h1{color:var(--neon);text-shadow:0 4px 22px rgba(57,255,122,.35)}
+.band-coral .hero-shoes img.s1{width:70%;top:8%;left:2%;transform:rotate(4deg)}
+
+/* ---------- lifestyle strip ---------- */
+.lifestyle{position:relative}
+.lifestyle img{width:100%;height:clamp(240px,40vw,420px);object-fit:cover}
+.lifestyle .cap{
+  position:absolute;left:6%;bottom:8%;color:#fff;max-width:420px;
+  text-shadow:0 3px 16px rgba(0,0,0,.5);
+}
+.lifestyle .cap h3{font-family:var(--display);font-weight:800;font-size:clamp(1.6rem,4vw,2.6rem)}
+
+/* ---------- about / brand ---------- */
+.about{background:var(--ink);color:#fff;text-align:center}
+.about .container{max-width:820px}
+.about .kicker{color:var(--yellow);font-weight:700;letter-spacing:2px;text-transform:uppercase;font-size:.78rem;margin-bottom:14px}
+.about h2{font-family:var(--display);font-weight:800;font-size:clamp(1.8rem,4vw,2.8rem);letter-spacing:-1px;margin-bottom:20px}
+.about p{opacity:.85;font-size:1.08rem;margin-bottom:14px}
+.about .brand-line{color:var(--yellow);font-weight:600}
+.stats{display:flex;justify-content:center;gap:52px;flex-wrap:wrap;margin-top:40px}
+.stat h4{font-family:var(--display);font-weight:800;font-size:2.4rem;color:var(--coral)}
+.stat p{opacity:.7;font-size:.9rem;margin:0}
+
+/* ---------- newsletter ---------- */
+.newsletter{background:linear-gradient(120deg,var(--yellow),var(--yellow-soft));text-align:center}
+.newsletter h2{font-family:var(--display);font-weight:800;font-size:clamp(1.7rem,4vw,2.6rem);color:var(--ink);letter-spacing:-.5px}
+.newsletter p{color:#5a4a00;margin:12px auto 26px;max-width:480px}
+.nl-form{display:flex;gap:10px;max-width:460px;margin:0 auto;flex-wrap:wrap;justify-content:center}
+.nl-form input{flex:1;min-width:220px;padding:14px 18px;border-radius:999px;border:none;font-family:var(--font);font-size:.95rem;outline:none}
+.nl-form .btn{background:var(--ink);color:#fff}
+.nl-form .btn:hover{background:var(--red);transform:translateY(-2px)}
+
+/* ---------- footer ---------- */
+.footer{background:#000;color:#bbb;padding:56px 0 26px}
+.footer .grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:32px;margin-bottom:36px}
+.footer .brand{color:#fff;margin-bottom:14px}
+.footer p{font-size:.9rem;opacity:.7;max-width:280px}
+.footer h5{color:#fff;font-weight:600;margin-bottom:16px;font-size:.95rem}
+.footer li{margin-bottom:9px}
+.footer li a{font-size:.88rem;opacity:.75;transition:.2s}
+.footer li a:hover{opacity:1;color:var(--coral)}
+.socials{display:flex;gap:12px;margin-top:16px}
+.socials a{width:38px;height:38px;border-radius:50%;background:#1a1a1a;display:grid;place-items:center;color:#fff;transition:.2s}
+.socials a:hover{background:var(--coral);transform:translateY(-3px)}
+.footer .copyright{border-top:1px solid #1e1e1e;padding-top:22px;text-align:center;font-size:.82rem;opacity:.55}
+.footer .copyright a{color:var(--coral)}
+
+/* ---------- toast ---------- */
+.toast{
+  position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(140%);
+  background:var(--ink);color:#fff;padding:13px 22px;border-radius:999px;
+  font-size:.9rem;font-weight:500;box-shadow:var(--shadow);z-index:200;
+  display:flex;align-items:center;gap:10px;transition:.4s cubic-bezier(.2,.9,.3,1.2);
+}
+.toast.show{transform:translateX(-50%) translateY(0)}
+.toast i{color:var(--neon)}
+
+/* ---------- reveal animation ---------- */
+.reveal{opacity:0;transform:translateY(28px);transition:.7s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+
+/* ---------- mobile menu drawer ---------- */
+.drawer{
+  position:fixed;inset:0 0 0 auto;width:min(300px,80%);background:#fff;z-index:130;
+  transform:translateX(100%);transition:.35s;box-shadow:-14px 0 40px rgba(0,0,0,.18);
+  padding:80px 26px 26px;display:flex;flex-direction:column;gap:22px;
+}
+.drawer.open{transform:none}
+.drawer a{font-weight:600;font-size:1.1rem}
+.drawer .close{position:absolute;top:20px;right:22px;font-size:1.4rem;background:none;border:none;cursor:pointer}
+.backdrop{position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:125;opacity:0;visibility:hidden;transition:.3s}
+.backdrop.show{opacity:1;visibility:visible}
+
+/* ---------- responsive ---------- */
+@media(max-width:980px){
+  .products{grid-template-columns:repeat(2,1fr)}
+  .footer .grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:820px){
+  .menu{display:none}
+  .burger{display:block}
+  .hero-inner{grid-template-columns:1fr;text-align:center;padding:40px 0}
+  .hero-copy p{margin-left:auto;margin-right:auto}
+  .hero-cta{justify-content:center}
+  .hero-shoes{min-height:280px;order:-1}
+  .feature{grid-template-columns:1fr}
+  .feature .txt{padding:28px}
+  .band-yellow .showcase{flex-direction:column;gap:12px}
+}
+@media(max-width:560px){
+  .products{grid-template-columns:1fr}
+  .footer .grid{grid-template-columns:1fr}
+  .stats{gap:30px}
+}

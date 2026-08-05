@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TransitGo — Windsor Transit App (Live Demo)</title>
+<meta name="description" content="TransitGo — a live interactive public-transit mobile app demo: plan a trip, buy a ticket, live schedules. Built from a Figma design by Médard Kiteretse.">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<a class="return-chip" href="../../index.html">← Back to portfolio</a>
+
+<main class="stage">
+  <!-- INTRO -->
+  <section class="intro">
+    <span class="kicker">🚌 Transit · Mobile App</span>
+    <h1>TransitGo — your city, <span>one tap</span> away.</h1>
+    <p class="lead">A public-transit companion for Windsor Transit riders. Plan a trip, buy and scan a ticket, and check live departures — all from your phone. A fully interactive front-end demo built from a Figma design.</p>
+    <div class="badges">
+      <span class="badge">🗺️ Plan a trip</span>
+      <span class="badge">🎫 Buy a ticket</span>
+      <span class="badge">⏱️ Live schedules</span>
+      <span class="badge">💳 My pass</span>
+    </div>
+    <div class="hint"><span class="dot"></span> Tap around the phone — it really works →</div>
+  </section>
+
+  <!-- PHONE -->
+  <div class="phone-wrap">
+    <div class="phone">
+      <div class="screen">
+        <div class="statusbar"><span id="clock">14:21</span><span>📶 🔋</span></div>
+
+        <div class="views" id="views">
+
+          <!-- HOME -->
+          <section class="view active" data-view="home">
+            <div class="app-head">
+              <img class="avatar" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&q=80&auto=format&fit=crop" alt="">
+              <div class="greet"><small>Good morning 👋</small><b>Hey, Léa</b></div>
+              <button class="bell" data-goto="account">🔔</button>
+            </div>
+
+            <div class="pass">
+              <div class="chip">💳</div>
+              <div class="brand">🚌 Windsor Transit</div>
+              <div class="type">Monthly Pass · Active</div>
+              <div class="row">
+                <div class="bal"><small>Balance</small><b>CAN$ 97.00</b></div>
+                <div class="pid">Pass id<b>798 014</b></div>
+              </div>
+            </div>
+
+            <div class="quick">
+              <div class="qa" data-goto="plan"><div class="ico">🗺️</div><small>Plan trip</small></div>
+              <div class="qa" data-goto="ticket"><div class="ico">🎫</div><small>Ticket</small></div>
+              <div class="qa" data-goto="schedule"><div class="ico">⏱️</div><small>Schedule</small></div>
+              <div class="qa" data-goto="map"><div class="ico">📍</div><small>Map</small></div>
+            </div>
+
+            <div class="sec-title">Your last trips <a data-goto="schedule">See all</a></div>
+            <div class="trips">
+              <div class="trip"><span class="chk">✓</span><div class="line">🚌 1C Transway</div><div class="leg">↳ From Ouellette</div><div class="leg">↳ To Tecumseh</div></div>
+              <div class="trip"><span class="chk">✓</span><div class="line">🚌 22 Tunnel</div><div class="leg">↳ From Ouellette</div><div class="leg">↳ To Downtown</div></div>
+              <div class="trip"><span class="chk">✓</span><div class="line">🚌 5 Dougall</div><div class="leg">↳ From University</div><div class="leg">↳ To Devonshire</div></div>
+              <div class="trip"><span class="chk">✓</span><div class="line">🚌 4 Ottawa</div><div class="leg">↳ From Downtown</div><div class="leg">↳ To Forest Glade</div></div>
+            </div>
+          </section>
+
+          <!-- PLAN -->
+          <section class="view" data-view="plan">
+            <button class="back" data-goto="home">← Plan a trip 🗺️</button>
+            <div class="field"><span class="pin a">A</span><input id="fromInput" placeholder="From — e.g. Ouellette Ave" value="Ouellette Ave"></div>
+            <div class="swap"><button id="swapBtn" title="Swap">⇅</button></div>
+            <div class="field"><span class="pin b">B</span><input id="toInput" placeholder="To — e.g. Devonshire Mall" value="Devonshire Mall"></div>
+            <button class="btn-primary" id="findBtn" style="margin-top:6px">Find routes</button>
+            <div class="sec-title" style="margin-top:22px">Popular destinations</div>
+            <div class="trips">
+              <div class="trip" data-dest="University of Windsor"><div class="line">🎓 University</div><div class="leg">↳ 12 min</div></div>
+              <div class="trip" data-dest="Downtown Terminal"><div class="line">🏙️ Downtown</div><div class="leg">↳ 8 min</div></div>
+              <div class="trip" data-dest="Devonshire Mall"><div class="line">🛍️ Devonshire</div><div class="leg">↳ 21 min</div></div>
+              <div class="trip" data-dest="Windsor Airport"><div class="line">✈️ Airport</div><div class="leg">↳ 34 min</div></div>
+            </div>
+          </section>
+
+          <!-- ROUTES -->
+          <section class="view" data-view="routes">
+            <button class="back" data-goto="plan">← Routes</button>
+            <div class="sec-title" id="routeHeader" style="margin-top:0">Ouellette Ave → Devonshire Mall</div>
+            <div id="routeList"></div>
+          </section>
+
+          <!-- TICKET -->
+          <section class="view" data-view="ticket">
+            <button class="back" data-goto="home">← My ticket 🎫</button>
+            <div class="ticket">
+              <div class="thead"><span>Windsor Transit</span><span id="ticketState">Single ride</span></div>
+              <div class="tbody">
+                <div class="barcode"></div>
+                <div class="scanme">SCAN ME AT THE READER</div>
+                <div class="perf"></div>
+                <div class="tinfo"><div><small>Line</small><b id="ticketLine">1C Transway</b></div><div style="text-align:right"><small>Valid until</small><b id="ticketValid">14:51</b></div></div>
+                <div class="price-tag">CAN$ <span id="ticketPrice">3.75</span></div>
+              </div>
+            </div>
+            <button class="btn-primary" id="buyBtn" style="margin-top:16px">Buy this ticket</button>
+            <button class="btn-ghost" data-goto="plan" style="margin-top:10px">Change route</button>
+          </section>
+
+          <!-- SCHEDULE -->
+          <section class="view" data-view="schedule">
+            <button class="back" data-goto="home">← Schedules ⏱️</button>
+            <div class="tabs2">
+              <div class="tab2 sel" data-sched="next">Next departures</div>
+              <div class="tab2" data-sched="full">Full schedule</div>
+            </div>
+            <div id="scheduleList"></div>
+          </section>
+
+          <!-- MAP -->
+          <section class="view" data-view="map">
+            <button class="back" data-goto="home">← Live map 📍</button>
+            <div class="mapbox">
+              <img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?w=800&q=80&auto=format&fit=crop" alt="City map">
+              <div class="mapchip"><span class="rl">1C</span><div><b style="font-family:'Plus Jakarta Sans';color:var(--slate);display:block;font-size:14px">Bus 1C arriving</b><small style="color:var(--grey);font-size:11.5px">2 min · Ouellette &amp; University</small></div></div>
+            </div>
+            <div class="sec-title">Nearby stops</div>
+            <div class="stop"><span class="rl">A1</span><div class="info"><b>Ouellette Ave</b><small>180 m · 2 lines</small></div><div class="eta"><b>2 min</b><small>Bus 1C</small></div></div>
+            <div class="stop"><span class="rl">B3</span><div class="info"><b>University Ave</b><small>320 m · 3 lines</small></div><div class="eta"><b>6 min</b><small>Bus 5</small></div></div>
+            <div class="stop"><span class="rl">C2</span><div class="info"><b>Wyandotte St</b><small>540 m · 2 lines</small></div><div class="eta"><b>11 min</b><small>Bus 22</small></div></div>
+          </section>
+
+          <!-- ACCOUNT -->
+          <section class="view" data-view="account">
+            <button class="back" data-goto="home">← Account</button>
+            <div class="app-head" style="padding-top:2px">
+              <img class="avatar" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&q=80&auto=format&fit=crop" alt="">
+              <div class="greet"><small>Rider since 2021</small><b>Léa Moreau</b></div>
+            </div>
+            <div class="menu-row" data-goto="schedule"><span class="mi">🚌</span><div class="mt"><b>My trips</b><small>History &amp; saved routes</small></div><span class="arr">›</span></div>
+            <div class="menu-row" data-toast="Payment methods — demo"><span class="mi">💳</span><div class="mt"><b>Payment method</b><small>Visa •••• 4021</small></div><span class="arr">›</span></div>
+            <div class="menu-row" data-toast="No new notifications"><span class="mi">🔔</span><div class="mt"><b>Notifications</b><small>Alerts &amp; service updates</small></div><span class="arr">›</span></div>
+            <div class="menu-row" data-toast="Promo: 10% off weekly pass!"><span class="mi">🎁</span><div class="mt"><b>Promos</b><small>1 offer available</small></div><span class="arr">›</span></div>
+            <div class="menu-row" data-toast="Help centre — demo"><span class="mi">❓</span><div class="mt"><b>Help &amp; FAQ</b><small>Get support</small></div><span class="arr">›</span></div>
+            <div class="menu-row" data-toast="Settings — demo"><span class="mi">⚙️</span><div class="mt"><b>Settings</b><small>Language, privacy</small></div><span class="arr">›</span></div>
+            <div class="menu-row" data-goto="login"><span class="mi">🚪</span><div class="mt"><b>Log out</b><small>See you soon!</small></div><span class="arr">›</span></div>
+          </section>
+
+          <!-- LOGIN -->
+          <section class="view" data-view="login">
+            <div class="login">
+              <div class="logo">🚌</div>
+              <h2>Welcome to TransitGo</h2>
+              <p>Sign in to plan trips and buy tickets</p>
+              <div class="inp"><span>👤</span><input placeholder="Username or email" value="lea.moreau"></div>
+              <div class="inp"><span>🔒</span><input type="password" placeholder="Password" value="password"></div>
+              <button class="btn-primary" data-goto="home" style="margin-top:6px">Sign in</button>
+              <button class="btn-ghost" data-goto="home" style="margin-top:10px">Create account</button>
+            </div>
+          </section>
+
+          <!-- SUCCESS -->
+          <section class="view" data-view="success">
+            <div class="success">
+              <div class="check">✓</div>
+              <h3>Ticket purchased!</h3>
+              <p id="successText">Your ticket is ready. Show the barcode to the driver or the reader.</p>
+              <button class="btn-primary" data-goto="ticket">Show my ticket</button>
+            </div>
+          </section>
+
+        </div><!-- /views -->
+
+        <div class="toast" id="toast"></div>
+
+        <!-- TAB BAR -->
+        <div class="tabbar">
+          <button class="tab on" data-goto="home"><span class="ti">🏠</span>Home</button>
+          <button class="tab" data-goto="plan"><span class="ti">🗺️</span>Plan</button>
+          <button class="tab fab" data-goto="ticket"><span class="ti">🎫</span></button>
+          <button class="tab" data-goto="schedule"><span class="ti">⏱️</span>Schedule</button>
+          <button class="tab" data-goto="account"><span class="ti">👤</span>Account</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</main>
+
+<p class="credit">Built by <a href="../../index.html">Médard Kiteretse</a> · Interactive front-end demo from a Figma design</p>
+
+<script src="app.js"></script>
+</body>
+</html>

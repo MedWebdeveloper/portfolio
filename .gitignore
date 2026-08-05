@@ -1,0 +1,15 @@
+# OS / éditeurs
+.DS_Store
+Thumbs.db
+*.swp
+.vscode/
+.idea/
+
+# Fichiers temporaires
+*.log
+*.tmp
+atlas_full.png
+atlas_slice_*.png
+
+# Node (au cas où)
+node_modules/

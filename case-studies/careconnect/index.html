@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CareConnect — Babysitting App (Live Demo)</title>
+<meta name="description" content="Interactive babysitting app demo: browse trusted sitters by age group, filter, view detailed verified profiles, book a session, and chat with sitters. Designed by Médard Kiteretse.">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<a class="return-chip" href="../../index.html">← Back to portfolio</a>
+
+<section class="stage">
+  <!-- Landing intro -->
+  <div class="intro">
+    <span class="kicker">🧸 CHILDCARE · MOBILE APP</span>
+    <h1>CareConnect — trusted <span>sitters</span>, one tap away.</h1>
+    <p>A warm platform connecting parents with verified babysitters. Browse sitters by age
+       group, check ratings, First-Aid/CPR certifications and reviews, book a session in
+       seconds, and chat with sitters — all from your phone. A fully interactive front-end
+       demo built from a Figma design.</p>
+    <div class="badges">
+      <div class="b">👶 By age group</div>
+      <div class="b">✅ Verified & certified</div>
+      <div class="b">📅 Book in seconds</div>
+      <div class="b">💬 Chat with sitters</div>
+      <div class="b">⭐ Ratings & reviews</div>
+    </div>
+    <div class="hint"><span class="dot"></span> Tap around the phone — it really works →</div>
+  </div>
+
+  <!-- Phone -->
+  <div class="phone-wrap">
+   <div class="phone">
+    <div class="screen">
+
+      <div class="statusbar">
+        <span id="clock">9:41</span>
+        <span>📶 &nbsp; 🔋</span>
+      </div>
+
+      <div class="views" id="views">
+
+        <!-- ============ HOME ============ -->
+        <section class="view active" data-view="home">
+          <div class="home-head">
+            <div>
+              <div class="hi">Hello 👋</div>
+              <div class="name">Find a sitter, Sophie</div>
+            </div>
+            <img class="ava" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=120&q=80&auto=format&fit=crop" alt="me" data-goto="profile">
+          </div>
+          <button class="searchbox" data-goto="search"><span>🔍</span> Search sitters near you…</button>
+
+          <div class="banner">
+            <h4>👶 Care you can trust</h4>
+            <p>Every sitter is background-checked and ID-verified. Book with peace of mind.</p>
+          </div>
+
+          <div class="sec-t">Browse by age</div>
+          <div class="ages" id="ages"><!-- injected --></div>
+
+          <div class="sec-t">Top rated near you <span class="see" data-goto="search">See all</span></div>
+          <div class="sitters" id="homeSitters"><!-- injected --></div>
+        </section>
+
+        <!-- ============ SEARCH ============ -->
+        <section class="view" data-view="search">
+          <div class="back-row"><button class="bk" data-goto="home">←</button><h3>Sitters near you</h3></div>
+          <div class="filters" id="filters"><!-- injected --></div>
+          <div class="sitters" id="searchSitters"><!-- injected --></div>
+        </section>
+
+        <!-- ============ SITTER PROFILE ============ -->
+        <section class="view" data-view="sitter">
+          <div class="sp-hero">
+            <button class="bk2" data-goto="search">←</button>
+            <button class="fav" id="favBtn" data-fav>🤍</button>
+            <img class="ava" id="spAva" src="" alt="sitter">
+            <h2 id="spName">—</h2>
+            <div class="loc" id="spLoc">—</div>
+            <div class="badges2" id="spBadges"></div>
+          </div>
+          <div class="sp-metrics">
+            <div class="m"><b id="spRate">—</b><small>per hour</small></div>
+            <div class="m"><b id="spStars">—</b><small id="spReviews">— reviews</small></div>
+            <div class="m"><b id="spExp">—</b><small>experience</small></div>
+          </div>
+          <div class="sp-block"><h4>About</h4><p id="spAbout">—</p></div>
+          <div class="sp-block"><h4>Certifications</h4></div>
+          <div class="certs" id="spCerts"></div>
+          <div class="sp-block"><h4>Reviews</h4></div>
+          <div id="spReviewList"></div>
+          <div class="sp-cta">
+            <button class="btn-primary" data-book>📅  Book this sitter</button>
+            <button class="btn-icon" data-openchat>💬</button>
+          </div>
+        </section>
+
+        <!-- ============ BOOKING ============ -->
+        <section class="view" data-view="booking">
+          <div class="back-row"><button class="bk" data-goto="sitter">←</button><h3>Book a session</h3></div>
+          <div class="booking">
+            <div class="b-sit">
+              <img id="bkAva" src="" alt="sitter">
+              <div><div class="n" id="bkName">—</div><div class="r" id="bkRate">—</div></div>
+            </div>
+            <div class="b-label">Choose a day</div>
+            <div class="days" id="days"><!-- injected --></div>
+            <div class="b-label">Start time</div>
+            <div class="slots" id="slots"><!-- injected --></div>
+            <div class="b-label">Duration</div>
+            <div class="dur" id="durs"><!-- injected --></div>
+            <div class="summary">
+              <div class="row"><span>Day</span><b id="sumDay">—</b></div>
+              <div class="row"><span>Time</span><b id="sumTime">—</b></div>
+              <div class="row"><span id="sumRateLbl">Rate</span><b id="sumRate">—</b></div>
+              <div class="row"><span>Service fee</span><b>$3.00</b></div>
+              <div class="row total"><span>Total</span><span class="amt" id="sumTotal">—</span></div>
+            </div>
+            <div style="padding:0 16px"><button class="btn-primary" style="width:100%" data-confirm>Confirm booking</button></div>
+          </div>
+        </section>
+
+        <!-- ============ MESSAGES ============ -->
+        <section class="view" data-view="messages">
+          <div class="back-row"><button class="bk" data-goto="home">←</button><h3>Messages</h3></div>
+          <div class="mlist" id="mlist"><!-- injected --></div>
+        </section>
+
+        <!-- ============ CHAT ============ -->
+        <section class="view" data-view="chat">
+          <div class="chat">
+            <div class="chat-head">
+              <button class="bk" data-goto="messages">←</button>
+              <img id="chAva" src="" alt="sitter">
+              <div><div class="chn" id="chName">—</div><div class="chs">● Online</div></div>
+            </div>
+            <div class="chat-body" id="chatBody"><!-- injected --></div>
+            <div class="chat-in">
+              <input id="chatInput" type="text" placeholder="Message…">
+              <button data-send>➤</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============ BOOKINGS ============ -->
+        <section class="view" data-view="bookings">
+          <div class="home-head"><div><div class="hi">Your sessions</div><div class="name">My bookings</div></div></div>
+          <div class="blist" id="blist"><!-- injected --></div>
+        </section>
+
+        <!-- ============ PROFILE ============ -->
+        <section class="view" data-view="profile">
+          <div class="pf-top">
+            <img class="ava" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&q=80&auto=format&fit=crop" alt="me">
+            <h2>Sophie Bernard</h2>
+            <p>👶 Mom of 2 · London, ON</p>
+          </div>
+          <div class="pf-metrics">
+            <div class="m"><b id="pfBookings">3</b><small>bookings</small></div>
+            <div class="m"><b>2</b><small>favourites</small></div>
+            <div class="m"><b>4.9⭐</b><small>as parent</small></div>
+          </div>
+          <div class="pf-list">
+            <div class="pf-row" data-goto="bookings"><span class="ic">📅</span> My bookings <span class="ar">›</span></div>
+            <div class="pf-row" data-goto="favs"><span class="ic">❤️</span> Favourite sitters <span class="ar">›</span></div>
+            <div class="pf-row" data-toast="Kids profiles saved 👶"><span class="ic">👶</span> My children <span class="ar">›</span></div>
+            <div class="pf-row" data-toast="Payment method saved 💳"><span class="ic">💳</span> Payment methods <span class="ar">›</span></div>
+            <div class="pf-row" data-toast="Settings saved ⚙️"><span class="ic">⚙️</span> Settings <span class="ar">›</span></div>
+            <div class="pf-row" data-goto="login"><span class="ic">🚪</span> Log out <span class="ar">›</span></div>
+          </div>
+        </section>
+
+        <!-- ============ FAVS ============ -->
+        <section class="view" data-view="favs">
+          <div class="back-row"><button class="bk" data-goto="profile">←</button><h3>Favourite sitters</h3></div>
+          <div class="sitters" id="favList"><p style="padding:30px 16px;color:var(--muted);text-align:center">No favourites yet.<br>Tap the 🤍 on a sitter to save them.</p></div>
+        </section>
+
+        <!-- ============ LOGIN ============ -->
+        <section class="view" data-view="login">
+          <div class="login">
+            <div class="logo">🧸</div>
+            <h2>Welcome to CareConnect</h2>
+            <p>Log in to find trusted, verified sitters near you.</p>
+            <input type="email" placeholder="Email" value="sophie@careconnect.app">
+            <input type="password" placeholder="Password" value="••••••••">
+            <button class="btn-primary" data-goto="home">Log in</button>
+            <div class="alt">New here? <b data-goto="home">Create an account</b></div>
+          </div>
+        </section>
+
+        <!-- ============ SUCCESS ============ -->
+        <section class="view" data-view="success">
+          <div class="done">
+            <div class="tick">✓</div>
+            <h2>Booking confirmed! 🎉</h2>
+            <p id="doneMsg">Your sitter has been notified and will confirm shortly.</p>
+            <div class="rc" id="doneDetail">—</div>
+            <button class="btn-primary" data-goto="bookings">View my bookings</button>
+            <button class="btn-ghost" data-goto="home">Back to home</button>
+          </div>
+        </section>
+
+      </div><!-- /views -->
+
+      <div class="toast" id="toast"></div>
+
+      <nav class="tabbar" id="tabbar">
+        <button class="tab on" data-tab="home"><span class="ti">🏠</span>Home</button>
+        <button class="tab" data-tab="search"><span class="ti">🔍</span>Search</button>
+        <button class="tab" data-tab="bookings"><span class="ti">📅</span>Bookings</button>
+        <button class="tab" data-tab="messages"><span class="ti">💬</span><span class="badge">2</span>Chat</button>
+        <button class="tab" data-tab="profile"><span class="ti">👤</span>Me</button>
+      </nav>
+
+    </div><!-- /screen -->
+   </div><!-- /phone -->
+  </div><!-- /phone-wrap -->
+</section>
+
+<p class="built">Interactive front-end demo · built with HTML, CSS & JavaScript from a Figma design by <b>Médard Kiteretse</b></p>
+
+<script src="app.js"></script>
+</body>
+</html>

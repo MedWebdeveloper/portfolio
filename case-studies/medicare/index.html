@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Medicare — Health & Booking App (Live Demo)</title>
+<meta name="description" content="Interactive mobile app demo: find a doctor, book an appointment slot, manage your appointments. Designed by Médard Kiteretse.">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<a class="return-chip" href="../../index.html">← Back to portfolio</a>
+
+<section class="stage">
+  <!-- Landing intro -->
+  <div class="intro">
+    <span class="kicker">🏥 HEALTHCARE · MOBILE APP</span>
+    <h1>Medicare — book a <span>doctor</span> in a few taps.</h1>
+    <p>A friendly medical booking app. Find the right physician, pick a time slot,
+       and manage your appointments — all in one place. This is a fully interactive
+       front-end demo built from a Figma design.</p>
+    <div class="badges">
+      <div class="b">🔍 Find a doctor</div>
+      <div class="b">📅 Book a slot</div>
+      <div class="b">🗓️ My appointments</div>
+      <div class="b">👩‍⚕️ Doctors team</div>
+      <div class="b">💬 Contact</div>
+    </div>
+    <div class="hint"><span class="dot"></span> Tap around the phone — it really works →</div>
+  </div>
+
+  <!-- Phone -->
+  <div class="phone-wrap">
+   <div class="phone">
+    <div class="screen">
+
+      <!-- status bar -->
+      <div class="statusbar" id="statusbar">
+        <span id="clock">9:41</span>
+        <span class="icons">📶 🔋</span>
+      </div>
+
+      <div class="views" id="views">
+
+        <!-- ============ HOME ============ -->
+        <section class="view active" data-view="home">
+          <div class="app-head">
+            <div class="greet">
+              <small>Good morning 👋</small>
+              <h2>Hello, Léa</h2>
+            </div>
+            <img class="avatar" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=120&q=80&auto=format&fit=crop" alt="user">
+          </div>
+
+          <div class="search" data-goto="search">
+            <span class="mag">🔍</span>
+            <input placeholder="Search doctor, speciality…" readonly>
+          </div>
+
+          <div class="promo">
+            <small>Telehealth</small>
+            <h3>Talk to a doctor online, anytime.</h3>
+            <button class="cta" data-goto="search">Book now</button>
+          </div>
+
+          <div class="sec"><h4>Categories</h4><a data-goto="services">See all</a></div>
+          <div class="cats">
+            <div class="cat" data-goto="search"><div class="ic">🫀</div><span>Cardio</span></div>
+            <div class="cat" data-goto="search"><div class="ic">🧠</div><span>Neuro</span></div>
+            <div class="cat" data-goto="search"><div class="ic">🦷</div><span>Dental</span></div>
+            <div class="cat" data-goto="search"><div class="ic">👁️</div><span>Eye</span></div>
+          </div>
+
+          <div class="sec"><h4>Top doctors</h4><a data-goto="search">See all</a></div>
+          <div id="homeDocs"></div>
+        </section>
+
+        <!-- ============ SEARCH / FIND DOCTOR ============ -->
+        <section class="view" data-view="search">
+          <div class="view-title">
+            <button class="back" data-goto="home">←</button>
+            <h2>Find a doctor</h2>
+          </div>
+          <div class="search">
+            <span class="mag">🔍</span>
+            <input id="docSearch" placeholder="Search by name or speciality…">
+          </div>
+          <div id="searchList"></div>
+        </section>
+
+        <!-- ============ DOCTOR PROFILE ============ -->
+        <section class="view" data-view="profile">
+          <div class="view-title">
+            <button class="back" data-goto="search">←</button>
+            <h2>Doctor</h2>
+          </div>
+          <div class="doc-hero">
+            <img id="pfImg" src="" alt="doctor">
+            <h3 id="pfName">—</h3>
+            <small id="pfSpec">—</small>
+          </div>
+          <div class="stats">
+            <div class="stat"><b id="pfExp">—</b><span>Experience</span></div>
+            <div class="stat"><b id="pfRate">—</b><span>Rating</span></div>
+            <div class="stat"><b id="pfPatients">—</b><span>Patients</span></div>
+          </div>
+          <div class="about-doc">
+            <h5>About</h5>
+            <p id="pfAbout">—</p>
+          </div>
+          <div class="book-bar">
+            <button class="btn-primary" data-goto="book">Book appointment</button>
+          </div>
+        </section>
+
+        <!-- ============ BOOK SLOT ============ -->
+        <section class="view" data-view="book">
+          <div class="view-title">
+            <button class="back" data-goto="profile">←</button>
+            <h2>Book a slot</h2>
+          </div>
+          <div class="doc" style="cursor:default">
+            <img id="bkImg" src="" alt="">
+            <div class="info"><h5 id="bkName">—</h5><small id="bkSpec">—</small></div>
+          </div>
+
+          <div class="bk-label">Select a day</div>
+          <div class="days" id="days"></div>
+
+          <div class="bk-label">Morning</div>
+          <div class="slots" id="slotsAM"></div>
+          <div class="bk-label">Afternoon</div>
+          <div class="slots" id="slotsPM"></div>
+
+          <div style="height:60px"></div>
+          <div class="book-bar">
+            <button class="btn-primary" id="confirmBtn">Confirm booking</button>
+          </div>
+        </section>
+
+        <!-- ============ SUCCESS ============ -->
+        <section class="view" data-view="success">
+          <div class="success">
+            <div class="check">✓</div>
+            <h3>Appointment booked!</h3>
+            <p id="successText">Your appointment has been confirmed. You'll get a reminder before it starts.</p>
+            <button class="btn-primary" style="max-width:220px" data-goto="appts">View my appointments</button>
+          </div>
+        </section>
+
+        <!-- ============ MY APPOINTMENTS ============ -->
+        <section class="view" data-view="appts">
+          <div class="view-title">
+            <button class="back" data-goto="home">←</button>
+            <h2>My appointments</h2>
+          </div>
+          <div id="apptList"></div>
+        </section>
+
+        <!-- ============ SERVICES ============ -->
+        <section class="view" data-view="services">
+          <div class="view-title">
+            <button class="back" data-goto="home">←</button>
+            <h2>Our services</h2>
+          </div>
+          <div class="rowcard"><div class="ic">🩺</div><div class="tx"><h5>General consultation</h5><p>See a GP in person or online for everyday health needs.</p></div></div>
+          <div class="rowcard"><div class="ic">🫀</div><div class="tx"><h5>Cardiology</h5><p>Heart check-ups, ECG and specialist follow-up.</p></div></div>
+          <div class="rowcard"><div class="ic">🧠</div><div class="tx"><h5>Neurology</h5><p>Migraine, sleep and nervous-system consultations.</p></div></div>
+          <div class="rowcard"><div class="ic">🦷</div><div class="tx"><h5>Dental care</h5><p>Cleaning, cavities and orthodontic advice.</p></div></div>
+          <div class="rowcard"><div class="ic">👁️</div><div class="tx"><h5>Ophthalmology</h5><p>Eye exams, prescriptions and vision screening.</p></div></div>
+          <div class="rowcard"><div class="ic">💊</div><div class="tx"><h5>Pharmacy & prescriptions</h5><p>Renew and receive your prescriptions digitally.</p></div></div>
+        </section>
+
+        <!-- ============ TEAM ============ -->
+        <section class="view" data-view="team">
+          <div class="view-title">
+            <button class="back" data-goto="home">←</button>
+            <h2>Our doctors</h2>
+          </div>
+          <div id="teamList"></div>
+        </section>
+
+        <!-- ============ CONTACT ============ -->
+        <section class="view" data-view="contact">
+          <div class="view-title">
+            <button class="back" data-goto="home">←</button>
+            <h2>Contact us</h2>
+          </div>
+          <div class="promo" style="background:linear-gradient(120deg,#0aa3ad,#12c8d3)">
+            <small>We're here 24/7</small>
+            <h3>Emergency? Call our hotline now.</h3>
+            <button class="cta" id="callBtn">📞 Call +1 800 000</button>
+          </div>
+          <div class="rowcard"><div class="ic">📍</div><div class="tx"><h5>Clinic address</h5><p>120 Health Avenue, Ottawa, ON, Canada</p></div></div>
+          <div class="rowcard"><div class="ic">✉️</div><div class="tx"><h5>Email</h5><p>hello@medicare-app.com</p></div></div>
+          <div class="rowcard"><div class="ic">🕘</div><div class="tx"><h5>Opening hours</h5><p>Mon–Sat · 8:00 – 20:00 · Online 24/7</p></div></div>
+          <button class="btn-primary" style="margin-top:6px" id="msgBtn">Send us a message</button>
+        </section>
+
+      </div><!-- /views -->
+
+      <div class="toast" id="toast"></div>
+
+      <!-- bottom tab bar -->
+      <nav class="tabbar">
+        <button class="tab active" data-goto="home"><span class="ic">🏠</span>Home</button>
+        <button class="tab" data-goto="search"><span class="ic">🔍</span>Doctors</button>
+        <button class="tab fab" data-goto="search"><span class="ic">＋</span></button>
+        <button class="tab" data-goto="appts"><span class="ic">🗓️</span>Bookings</button>
+        <button class="tab" data-goto="contact"><span class="ic">💬</span>Contact</button>
+      </nav>
+
+    </div>
+   </div>
+  </div>
+</section>
+
+<footer class="credit">
+  Interactive front-end demo · designed &amp; built by <a href="../../index.html">Médard Kiteretse</a> · HTML · CSS · vanilla JavaScript
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

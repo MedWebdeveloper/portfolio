@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zenith — Dashboard</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/dashboard.css">
+<link rel="icon" href="assets/zenith-logo.png">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute"><defs>
+  <linearGradient id="znt-grad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7C3AED"/><stop offset="1" stop-color="#22D3EE"/></linearGradient>
+</defs></svg>
+
+<div class="app">
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <a href="index.html" class="brand">
+      <svg class="brand-logo" viewBox="0 0 48 48"><path d="M24 4 L44 40 L34 40 L24 20 L14 40 L4 40 Z" fill="url(#znt-grad)"/></svg>
+      Zenith
+    </a>
+    <nav class="side-nav">
+      <a href="#" class="active"><span class="ic">📊</span> Dashboard</a>
+      <a href="#"><span class="ic">💱</span> Trade</a>
+      <a href="#"><span class="ic">💼</span> Portfolio</a>
+      <a href="#"><span class="ic">🔒</span> Staking</a>
+      <a href="#"><span class="ic">🌉</span> Bridge</a>
+      <a href="blog/index.html"><span class="ic">📰</span> News</a>
+      <a href="#"><span class="ic">⚙️</span> Settings</a>
+    </nav>
+    <div class="side-foot">
+      <div class="side-card">
+        <strong>Stake ZNT</strong>
+        <p>Earn up to 18% APY on your idle tokens.</p>
+        <a href="#" class="btn btn-primary" style="width:100%;justify-content:center">Stake now</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+    <div class="topbar">
+      <div>
+        <h1>Good morning, Médard 👋</h1>
+        <div class="sub">Here's your portfolio overview for today</div>
+      </div>
+      <div class="top-actions">
+        <div class="search-box">🔎 <input placeholder="Search markets..."></div>
+        <a href="index.html" class="btn btn-ghost">← Home</a>
+        <div class="avatar">MK</div>
+      </div>
+    </div>
+
+    <!-- balance cards -->
+    <div class="cards-row">
+      <div class="dcard glass">
+        <div class="top">Total Balance <span class="pill">💰</span></div>
+        <div class="amt" id="totalBal">$48,920.44</div>
+        <div class="chg up" id="totalChg">▲ 4.21% ($1,976) today</div>
+      </div>
+      <div class="dcard glass">
+        <div class="top">ZNT Holdings <span class="pill">▲</span></div>
+        <div class="amt" id="zntHold">6,420 ZNT</div>
+        <div class="chg up">≈ $21,956 · ▲ 5.8%</div>
+      </div>
+      <div class="dcard glass">
+        <div class="top">Staked <span class="pill">🔒</span></div>
+        <div class="amt">3,000 ZNT</div>
+        <div class="chg up">Earning 18% APY</div>
+      </div>
+      <div class="dcard glass">
+        <div class="top">24h P&amp;L <span class="pill">📈</span></div>
+        <div class="amt chg up">+$1,976.20</div>
+        <div class="chg up">▲ 4.21%</div>
+      </div>
+    </div>
+
+    <!-- chart + trade -->
+    <div class="dash-grid">
+      <div class="panel glass">
+        <div class="panel-head">
+          <div>
+            <h3>ZNT / USDT</h3>
+            <div class="price-now gradient-text" id="chartPrice">$3.42</div>
+          </div>
+          <div class="range-tabs" id="rangeTabs">
+            <button data-r="1D">1D</button>
+            <button data-r="1W" class="active">1W</button>
+            <button data-r="1M">1M</button>
+            <button data-r="1Y">1Y</button>
+          </div>
+        </div>
+        <canvas id="priceChart" height="130"></canvas>
+      </div>
+
+      <!-- trade panel -->
+      <div class="panel glass">
+        <div class="panel-head"><h3>Quick Trade</h3></div>
+        <div class="trade-tabs">
+          <button class="buy active" id="tabBuy">Buy</button>
+          <button class="sell" id="tabSell">Sell</button>
+        </div>
+        <div class="field">
+          <label>You pay</label>
+          <div class="input"><input type="number" id="payAmt" value="1000"><span class="cur">USDT</span></div>
+        </div>
+        <div class="pct-row" id="pctRow">
+          <button data-p="25">25%</button><button data-p="50">50%</button><button data-p="75">75%</button><button data-p="100">Max</button>
+        </div>
+        <div class="field">
+          <label>You receive</label>
+          <div class="input"><input type="number" id="getAmt" value="292.4" readonly><span class="cur">ZNT</span></div>
+        </div>
+        <div class="trade-summary"><span>Price</span><span id="tPrice">1 ZNT = $3.42</span></div>
+        <div class="trade-summary"><span>Network fee</span><span>~$0.01</span></div>
+        <button class="btn btn-trade buy" id="doTrade">Buy ZNT</button>
+      </div>
+    </div>
+
+    <!-- market + portfolio -->
+    <div class="dash-grid mt">
+      <div class="panel glass">
+        <div class="panel-head"><h3>Markets</h3><span class="sub" style="color:var(--text-dim);font-size:13px">Live prices</span></div>
+        <table class="market-table">
+          <thead><tr><th>Asset</th><th>Price</th><th>24h</th><th>Chart</th><th></th></tr></thead>
+          <tbody id="marketBody"></tbody>
+        </table>
+      </div>
+
+      <div class="panel glass">
+        <div class="panel-head"><h3>Portfolio Allocation</h3></div>
+        <div class="holdings" id="holdings">
+          <div class="holding"><div class="bar-wrap"><div class="hname"><span>ZNT</span><span class="val">45%</span></div><div class="bar"><span style="width:45%;background:#7C3AED"></span></div></div></div>
+          <div class="holding"><div class="bar-wrap"><div class="hname"><span>BTC</span><span class="val">25%</span></div><div class="bar"><span style="width:25%;background:#F7931A"></span></div></div></div>
+          <div class="holding"><div class="bar-wrap"><div class="hname"><span>ETH</span><span class="val">18%</span></div><div class="bar"><span style="width:18%;background:#627EEA"></span></div></div></div>
+          <div class="holding"><div class="bar-wrap"><div class="hname"><span>SOL</span><span class="val">8%</span></div><div class="bar"><span style="width:8%;background:#22D3EE"></span></div></div></div>
+          <div class="holding"><div class="bar-wrap"><div class="hname"><span>USDT</span><span class="val">4%</span></div><div class="bar"><span style="width:4%;background:#26A17B"></span></div></div></div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<div class="toast" id="toast">Order placed successfully ✓</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script src="js/dashboard.js"></script>
+</body>
+</html>

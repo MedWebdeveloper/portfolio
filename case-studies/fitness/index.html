@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Silhouette — Fitness App (Live Demo)</title>
+<meta name="description" content="Interactive women's fitness app demo: browse workout programs, follow a guided exercise player with timer, track your progress and manage your profile. Designed by Médard Kiteretse.">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<a class="return-chip" href="../../index.html">← Back to portfolio</a>
+
+<section class="stage">
+  <!-- Landing intro -->
+  <div class="intro">
+    <span class="kicker">💪 FITNESS · MOBILE APP</span>
+    <h1>Silhouette — your body, your <span>power</span>.</h1>
+    <p>A bold women's fitness app. Browse workout programs, start a guided session with a
+       live timer that counts down each exercise, track your weekly progress, and hit your
+       goals — all from your phone. A fully interactive front-end demo built from a Figma design.</p>
+    <div class="badges">
+      <div class="b">🔥 Workout programs</div>
+      <div class="b">⏱️ Guided timer player</div>
+      <div class="b">📈 Track your progress</div>
+      <div class="b">🏆 Achievements</div>
+      <div class="b">👤 Your profile</div>
+    </div>
+    <div class="hint"><span class="dot"></span> Tap around the phone — it really works →</div>
+  </div>
+
+  <!-- Phone -->
+  <div class="phone-wrap">
+   <div class="phone">
+    <div class="screen">
+
+      <div class="statusbar">
+        <span id="clock">9:41</span>
+        <span>📶 &nbsp; 🔋</span>
+      </div>
+
+      <div class="views" id="views">
+
+        <!-- ============ HOME / BROWSE ============ -->
+        <section class="view active" data-view="home">
+          <div class="home-head">
+            <div>
+              <div class="hi">Good morning 👋</div>
+              <div class="name">Let's train, Léa</div>
+            </div>
+            <img class="ava" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=120&q=80&auto=format&fit=crop" alt="me" data-goto="profile">
+          </div>
+
+          <div class="ring-card">
+            <div class="ring" style="--pct:62%">
+              <div class="inner"><b>62%</b><small>DAILY GOAL</small></div>
+            </div>
+            <div class="txt">
+              <h4>310 / 500 kcal</h4>
+              <p>Nice work! One short session left to hit today's goal. 🔥</p>
+            </div>
+          </div>
+
+          <div class="sec-t">Categories</div>
+          <div class="cats" id="cats"><!-- injected --></div>
+
+          <div class="sec-t">Featured programs <span class="see" data-goto="home">See all</span></div>
+          <div class="wk-list" id="wkList"><!-- injected --></div>
+
+          <div class="sec-t">Quick sessions</div>
+          <div class="tiles" id="tiles"><!-- injected --></div>
+        </section>
+
+        <!-- ============ PROGRAM DETAIL ============ -->
+        <section class="view" data-view="program">
+          <div class="prg-hero">
+            <img id="prgImg" src="" alt="program">
+            <div class="ov"></div>
+            <button class="bk2" data-goto="home">←</button>
+            <button class="fav" id="favBtn" data-fav>🤍</button>
+            <div class="h-body">
+              <span class="tagline" id="prgTag">WEIGHT LOSS</span>
+              <h2 id="prgTitle">Full Body Workout</h2>
+              <div class="meta">
+                <span id="prgDur">⏱️ 28 min</span>
+                <span id="prgKcal">🔥 320 kcal</span>
+                <span id="prgLvl">📊 Beginner</span>
+              </div>
+            </div>
+          </div>
+          <p class="prg-desc" id="prgDesc"></p>
+          <div class="sec-t">Exercises <span class="see" id="exCount">0 moves</span></div>
+          <div class="ex-list" id="exList"><!-- injected --></div>
+          <div class="start-cta">
+            <button class="btn-primary" data-start>▶  Start workout</button>
+          </div>
+        </section>
+
+        <!-- ============ PLAYER ============ -->
+        <section class="view" data-view="player">
+          <div class="player">
+            <div class="p-top">
+              <button data-goto="program">✕</button>
+              <span class="step" id="pStep">Exercise 1 / 6</span>
+              <button data-goto="program">☰</button>
+            </div>
+            <div class="p-img"><img id="pImg" src="" alt="exercise"></div>
+            <div class="p-name" id="pName">Jumping Jacks</div>
+            <div class="p-sub" id="pSub">Warm up · full body</div>
+            <div class="timer-ring" id="timerRing" style="--tpct:0%">
+              <div class="ti"><b id="pTime">0:40</b><small>SECONDS</small></div>
+            </div>
+            <div class="p-ctrls">
+              <button class="nav" id="pPrev" data-pprev>⏮</button>
+              <button class="play" id="pPlay" data-pplay>▶</button>
+              <button class="nav" id="pNext" data-pnext>⏭</button>
+            </div>
+            <div class="p-progress">
+              <div class="bar"><span id="pBar"></span></div>
+              <div class="lbl"><span id="pDone">0 done</span><span id="pLeft">6 to go</span></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============ WORKOUTS (list) ============ -->
+        <section class="view" data-view="workouts">
+          <div class="back-row"><button class="bk" data-goto="home">←</button><h3>All workouts</h3></div>
+          <div class="cats" id="cats2"><!-- injected --></div>
+          <div class="wk-list" id="wkList2"><!-- injected --></div>
+        </section>
+
+        <!-- ============ PROGRESS ============ -->
+        <section class="view" data-view="progress">
+          <div class="home-head"><div><div class="hi">Keep it up 💪</div><div class="name">Your progress</div></div></div>
+          <div class="stats-grid">
+            <div class="stat"><div class="v" id="stKcal">1 840</div><div class="k">🔥 kcal this week</div></div>
+            <div class="stat"><div class="v" id="stMin">214</div><div class="k">⏱️ active minutes</div></div>
+            <div class="stat"><div class="v" id="stSess">7</div><div class="k">✅ sessions</div></div>
+            <div class="stat"><div class="v">5🔥</div><div class="k">day streak</div></div>
+          </div>
+          <div class="week">
+            <div class="week-card">
+              <h4>This week</h4>
+              <div class="bars" id="bars"><!-- injected --></div>
+            </div>
+          </div>
+          <div class="sec-t">Achievements</div>
+          <div class="ach">
+            <div class="a"><div class="ic">🏆</div><div class="info"><h5>7-day streak</h5><p>You trained every day this week!</p></div></div>
+            <div class="a"><div class="ic">🔥</div><div class="info"><h5>Calorie crusher</h5><p>Burned 1 800+ kcal in a week.</p></div></div>
+            <div class="a"><div class="ic">⚡</div><div class="info"><h5>Early bird</h5><p>3 morning workouts completed.</p></div></div>
+          </div>
+        </section>
+
+        <!-- ============ PROFILE ============ -->
+        <section class="view" data-view="profile">
+          <div class="pf">
+            <div class="pf-top">
+              <img class="ava" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&q=80&auto=format&fit=crop" alt="me">
+              <h2>Léa Moreau</h2>
+              <p>🎯 Goal: Lose weight · Intermediate</p>
+            </div>
+            <div class="pf-metrics">
+              <div class="m"><b>58 kg</b><small>Weight</small></div>
+              <div class="m"><b>168 cm</b><small>Height</small></div>
+              <div class="m"><b>27</b><small>Workouts</small></div>
+            </div>
+            <div class="pf-list">
+              <div class="pf-row" data-goto="progress"><span class="ic">📊</span> My progress <span class="ar">›</span></div>
+              <div class="pf-row" data-goto="favs"><span class="ic">❤️</span> Saved programs <span class="ar">›</span></div>
+              <div class="pf-row" data-toast="Goal updated 🎯"><span class="ic">🎯</span> My goals <span class="ar">›</span></div>
+              <div class="pf-row" data-toast="Reminders on ⏰"><span class="ic">⏰</span> Reminders <span class="ar">›</span></div>
+              <div class="pf-row" data-toast="Settings saved ⚙️"><span class="ic">⚙️</span> Settings <span class="ar">›</span></div>
+              <div class="pf-row" data-goto="login"><span class="ic">🚪</span> Log out <span class="ar">›</span></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============ SAVED / FAVS ============ -->
+        <section class="view" data-view="favs">
+          <div class="back-row"><button class="bk" data-goto="profile">←</button><h3>Saved programs</h3></div>
+          <div class="wk-list" id="favList"><p style="padding:30px 16px;color:var(--muted);text-align:center">No saved programs yet.<br>Tap the 🤍 on a program to save it.</p></div>
+        </section>
+
+        <!-- ============ LOGIN ============ -->
+        <section class="view" data-view="login">
+          <div class="login">
+            <div class="logo">💪</div>
+            <h2>Welcome back</h2>
+            <p>Log in to keep your streak alive and reach your goals.</p>
+            <input type="email" placeholder="Email" value="lea@silhouette.app">
+            <input type="password" placeholder="Password" value="••••••••">
+            <button class="btn-primary" data-goto="home">Log in</button>
+            <div class="alt">New here? <b data-goto="home">Create an account</b></div>
+          </div>
+        </section>
+
+        <!-- ============ SUCCESS ============ -->
+        <section class="view" data-view="success">
+          <div class="done">
+            <div class="tick">✓</div>
+            <h2>Workout complete! 🎉</h2>
+            <p>Amazing effort — you crushed every exercise.</p>
+            <div class="kcal" id="doneKcal">🔥 320 kcal burned · 28 min</div>
+            <button class="btn-primary" data-goto="progress">See my progress</button>
+            <button class="btn-ghost" data-goto="home">Back to home</button>
+          </div>
+        </section>
+
+      </div><!-- /views -->
+
+      <!-- toast -->
+      <div class="toast" id="toast"></div>
+
+      <!-- bottom tabs -->
+      <nav class="tabbar" id="tabbar">
+        <button class="tab on" data-tab="home"><span class="ti">🏠</span>Home</button>
+        <button class="tab" data-tab="workouts"><span class="ti">🏋️</span>Workouts</button>
+        <button class="tab" data-tab="progress"><span class="ti">📈</span>Progress</button>
+        <button class="tab" data-tab="profile"><span class="ti">👤</span>Me</button>
+      </nav>
+
+    </div><!-- /screen -->
+   </div><!-- /phone -->
+  </div><!-- /phone-wrap -->
+</section>
+
+<p class="built">Interactive front-end demo · built with HTML, CSS & JavaScript from a Figma design by <b>Médard Kiteretse</b></p>
+
+<script src="app.js"></script>
+</body>
+</html>
