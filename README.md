@@ -22,6 +22,7 @@ wireframe all the way to code.
 ## 🧩 Featured projects
 | Project | Type |
 |---|---|
+| **[ZENITH — DeFi Platform](https://medardkiteretse.com/case-studies/zenith/)** ⭐ | **Live crypto/DeFi** website + trading dashboard (Chart.js) |
 | Atlas Law Firm | Corporate website (multi-page) |
 | **[LUXE — Fashion Shop](https://medardkiteretse.com/case-studies/luxe/)** ⭐ | **Live & interactive** fashion e-commerce (cart, filters, search) |
 | TID Store | Shoe shop e-commerce |
