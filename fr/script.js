@@ -12,6 +12,51 @@
 */
 const PROJECTS = [
   {
+    title:"ShopEase — Concept d'app E-commerce",
+    cat:"uiux",
+    catLabel:"UI/UX · App mobile",
+    cover:"images/thumbs/cover-ecommerce.jpg",
+    short:"Une UI d'app e-commerce claire et moderne — grille produits, filtres, panier & paiement en un tap.",
+    type:"Concept UI/UX (e-commerce mobile)",
+    tools:"Figma, Adobe Illustrator",
+    year:"2025",
+    challenge:"ShopEase est un concept d'UI d'application shopping pensé pour rendre l'achat en ligne fluide et agréable. Le design mise sur une interface lumineuse et conviviale : grille de produits lisible, filtres par catégorie (vêtements, chaussures, accessoires), bannière mise en avant, listes de souhaits, panier en direct et un paiement rapide en un seul tap. Une palette violet-corail vibrante, des ombres douces et beaucoup d'espace pour garder une expérience premium et facile à naviguer. Concept original réalisé pour le portfolio.",
+    tags:["E-commerce","App mobile","UI Design","Figma","Concept"],
+    gallery:[
+      "images/thumbs/cover-ecommerce.jpg"
+    ]
+  },
+  {
+    title:"QuickBite — Concept d'app de livraison de repas",
+    cat:"uiux",
+    catLabel:"UI/UX · App mobile",
+    cover:"images/thumbs/cover-fooddelivery.jpg",
+    short:"Une UI d'app de livraison chaleureuse — restaurants, suivi de commande en direct & paiement fluide.",
+    type:"Concept UI/UX (livraison de repas)",
+    tools:"Figma, Adobe Illustrator",
+    year:"2025",
+    challenge:"QuickBite est un concept d'UI d'application de livraison de repas construit autour de la rapidité et de la gourmandise. L'interface permet de parcourir restaurants et plats via des cartes riches, de filtrer par cuisine, d'ajouter au panier et de suivre sa commande sur une carte de livraison en direct avec barre de suivi en temps réel. Une palette orange-crème chaleureuse, des icônes de plats illustrées et des cartes arrondies rendent tout le parcours convivial et appétissant. Concept original réalisé pour le portfolio.",
+    tags:["Livraison","App mobile","UI Design","Figma","Concept"],
+    gallery:[
+      "images/thumbs/cover-fooddelivery.jpg"
+    ]
+  },
+  {
+    title:"Wanderly — Concept d'app de réservation de voyage",
+    cat:"uiux",
+    catLabel:"UI/UX · App mobile",
+    cover:"images/thumbs/cover-travel.jpg",
+    short:"Une UI d'app de voyage apaisante — recherche de vols, découverte de destinations & carte interactive.",
+    type:"Concept UI/UX (réservation de voyage)",
+    tools:"Figma, Adobe Illustrator",
+    year:"2025",
+    challenge:"Wanderly est un concept d'UI d'application de réservation de voyage conçu pour rendre la planification de séjour simple et inspirante. Le design combine une barre de recherche vol-et-hébergement intelligente, de belles cartes de destinations, un sélecteur de dates et une carte interactive avec repères de localisation. Une palette sereine turquoise-bleu ciel associée à des paysages illustrés garde une ambiance détendue et pleine de wanderlust, de la découverte jusqu'à la réservation. Concept original réalisé pour le portfolio.",
+    tags:["Voyage","Réservation","App mobile","UI Design","Figma"],
+    gallery:[
+      "images/thumbs/cover-travel.jpg"
+    ]
+  },
+  {
     title:"ZENITH — Plateforme DeFi nouvelle génération (en ligne)",
     cat:"web",
     catLabel:"Site Web Live",
