@@ -1,4 +1,5 @@
-// URBANTOP project data — ready to merge into the main PROJECTS array.
+// URBANTOP — Shopify case study data.
+// Loaded after script.js so the project can be added without changing the main project catalogue.
 const URBANTOP_PROJECT = {
   title:"URBANTOP — Shopify Bundle Experience",
   cat:"web",
@@ -19,3 +20,6 @@ const URBANTOP_PROJECT = {
     "images/projects/urbantop-cart-discount.png"
   ]
 };
+
+PROJECTS.unshift(URBANTOP_PROJECT);
+renderProjects("all");
