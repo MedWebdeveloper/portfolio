@@ -3,7 +3,7 @@ const URBANTOP_PROJECT = {
   title:"URBANTOP — Shopify Bundle Experience",
   cat:"web",
   catLabel:"Shopify · E-commerce",
-  cover:"images/thumbs/cover-shoes.jpg",
+  cover:"images/projects/urbantop-home.png",
   short:"Conversion-focused Shopify storefront with a Buy 3, Get 1 Free bundle flow, size variants and automatic cart discount.",
   type:"Shopify e-commerce / bundle experience",
   tools:"Shopify, Theme Editor, Discounts, Product Variants",
@@ -12,5 +12,10 @@ const URBANTOP_PROJECT = {
   tags:["Shopify","E-commerce","CRO","Bundle","Responsive"],
   link:"case-studies/urbantop/index.html",
   linkLabel:"Read the Shopify case study →",
-  gallery:["images/thumbs/cover-shoes.jpg"]
+  gallery:[
+    "images/projects/urbantop-home.png",
+    "images/projects/urbantop-bundle.png",
+    "images/projects/urbantop-product.png",
+    "images/projects/urbantop-cart-discount.png"
+  ]
 };
