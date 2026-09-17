@@ -2,7 +2,7 @@
 // Loaded after script.js so the project can be added without changing the main project catalogue.
 const URBANTOP_PROJECT = {
   title:"URBANTOP — Shopify Bundle Experience",
-  cat:"web",
+  cat:"shopify",
   catLabel:"Shopify · E-commerce",
   cover:"images/projects/urbantop-home.png",
   short:"Conversion-focused Shopify storefront with a Buy 3, Get 1 Free bundle flow, size variants and automatic cart discount.",
@@ -13,13 +13,7 @@ const URBANTOP_PROJECT = {
   tags:["Shopify","E-commerce","CRO","Bundle","Responsive"],
   link:"case-studies/urbantop/index.html",
   linkLabel:"Read the Shopify case study →",
-  gallery:[
-    "images/projects/urbantop-home.png",
-    "images/projects/urbantop-bundle.png",
-    "images/projects/urbantop-product.png",
-    "images/projects/urbantop-cart-discount.png"
-  ]
+  gallery:["images/projects/urbantop-home.png","images/projects/urbantop-bundle.png","images/projects/urbantop-product.png","images/projects/urbantop-cart-discount.png"]
 };
-
 PROJECTS.unshift(URBANTOP_PROJECT);
 renderProjects("all");
