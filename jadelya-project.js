@@ -1,7 +1,7 @@
 // Jadélya — Shopify beauty e-commerce case study data.
 const JADELYA_PROJECT = {
   title:"Jadélya — Beauty E-commerce Store",
-  cat:"web",
+  cat:"shopify",
   catLabel:"Shopify · E-commerce",
   cover:"images/projects/jadelya-home.png",
   short:"Shopify beauty storefront combining conversion-focused product presentation, a streamlined cart journey and responsive e-commerce UX.",
@@ -12,13 +12,7 @@ const JADELYA_PROJECT = {
   tags:["Shopify","E-commerce","Product Page","CRO","Responsive"],
   link:"case-studies/jadelya/index.html",
   linkLabel:"Read the Shopify case study →",
-  gallery:[
-    "images/projects/jadelya-home.png",
-    "images/projects/jadelya-product.png",
-    "images/projects/jadelya-cart.png",
-    "images/projects/jadelya-full.png"
-  ]
+  gallery:["images/projects/jadelya-home.png","images/projects/jadelya-product.png","images/projects/jadelya-cart.png","images/projects/jadelya-full.png"]
 };
-
 PROJECTS.unshift(JADELYA_PROJECT);
 renderProjects("all");

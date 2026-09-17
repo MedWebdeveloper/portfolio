@@ -1,7 +1,7 @@
 // Relivaura — Shopify wellness e-commerce case study data.
 const RELIVAURA_PROJECT = {
   title:"Relivaura — Wellness E-commerce Store",
-  cat:"web",
+  cat:"shopify",
   catLabel:"Shopify · E-commerce",
   cover:"images/projects/relivaura-home.png",
   short:"Responsive Shopify wellness storefront for FlexiKnee Pro, with conversion-focused product presentation, clear purchase actions and a streamlined cart journey.",
@@ -12,12 +12,7 @@ const RELIVAURA_PROJECT = {
   tags:["Shopify","E-commerce","UX/UI","CRO","Responsive","Product Page"],
   link:"case-studies/relivaura/index.html",
   linkLabel:"Read the Shopify case study →",
-  gallery:[
-    "images/projects/relivaura-home.png",
-    "images/projects/relivaura-product.png",
-    "images/projects/relivaura-cart.png"
-  ]
+  gallery:["images/projects/relivaura-home.png","images/projects/relivaura-product.png","images/projects/relivaura-cart.png"]
 };
-
 PROJECTS.unshift(RELIVAURA_PROJECT);
 renderProjects("all");
