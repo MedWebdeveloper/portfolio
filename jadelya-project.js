@@ -1,5 +1,5 @@
-// Jadélya Shopify project — loaded after script.js
-PROJECTS.unshift({
+// Jadélya — Shopify beauty e-commerce case study data.
+const JADELYA_PROJECT = {
   title:"Jadélya — Beauty E-commerce Store",
   cat:"web",
   catLabel:"Shopify · E-commerce",
@@ -18,4 +18,7 @@ PROJECTS.unshift({
     "images/projects/jadelya-cart.png",
     "images/projects/jadelya-full.png"
   ]
-});
+};
+
+PROJECTS.unshift(JADELYA_PROJECT);
+renderProjects("all");
