@@ -402,16 +402,21 @@ window.addEventListener("scroll", ()=>{
 /* ---------- MOBILE MENU ---------- */
 const burger = document.getElementById("burger");
 const navLinks = document.getElementById("navLinks");
-if(burger){
-  burger.addEventListener("click", ()=>{
-    navLinks.classList.toggle("open");
-    burger.classList.toggle("active");
-  });
-  navLinks.querySelectorAll("a").forEach(a=>{
-    a.addEventListener("click", ()=>{
-      navLinks.classList.remove("open");
-      burger.classList.remove("active");
-    });
+function setMobileMenu(open){
+  if(!burger || !navLinks) return;
+  navLinks.classList.toggle("open", open);
+  burger.classList.toggle("active", open);
+  burger.setAttribute("aria-expanded", String(open));
+  burger.setAttribute("aria-label", open ? "Close menu" : "Menu");
+}
+if(burger && navLinks){
+  burger.setAttribute("aria-expanded","false");
+  burger.addEventListener("click", ()=> setMobileMenu(!navLinks.classList.contains("open")));
+  navLinks.querySelectorAll("a").forEach(a=>a.addEventListener("click", ()=>setMobileMenu(false)));
+  document.addEventListener("click", e=>{
+    if(navLinks.classList.contains("open") && !navLinks.contains(e.target) && !burger.contains(e.target)){
+      setMobileMenu(false);
+    }
   });
 }
 
