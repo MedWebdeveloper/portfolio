@@ -476,3 +476,40 @@ footer .logo{font-size:18px;margin-bottom:8px}
 @media screen and (max-width:560px){
   .hero{padding-top:32px !important}
 }
+
+
+/* Mobile interaction polish */
+@media screen and (max-width:560px){
+  .burger{width:46px;height:46px;align-items:center;justify-content:center;gap:5px;border-radius:12px}
+  .burger span{transition:transform .25s ease,opacity .2s ease}
+  .burger.active span:nth-child(1){transform:translateY(8px) rotate(45deg)}
+  .burger.active span:nth-child(2){opacity:0}
+  .burger.active span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+  .nav-links{width:min(82vw,320px);padding:76px 24px 32px;align-items:stretch}
+  .nav-links a{font-size:17px;padding:10px 4px}
+  .nav-links .nav-cta{justify-content:center;padding:12px 18px}
+  .nav-links .lang-switch{justify-content:center;margin-left:0}
+
+  .project-card{touch-action:manipulation}
+  .project-overlay{display:none}
+  .project-card:active{transform:scale(.99)}
+
+  .modal-overlay{padding:8px 8px 18px}
+  .modal-card{max-height:calc(100dvh - 16px);overflow-y:auto;overscroll-behavior:contain}
+  .modal-hero{position:relative}
+  .modal-close{position:sticky;float:right;top:8px;right:8px;margin:8px 8px -52px 0;z-index:10;background:rgba(13,11,30,.88)}
+  .modal-body{clear:both}
+  .case-link-btn{width:100%;justify-content:center;text-align:center}
+  .gallery-item::after{opacity:1}
+  .gallery-item{touch-action:manipulation}
+
+  .lightbox{padding:12px 42px}
+  .lightbox img{max-width:100%;max-height:82dvh}
+  .lightbox-nav{width:40px;height:40px;font-size:24px}
+  .lightbox-prev{left:4px}
+  .lightbox-next{right:4px}
+
+  #contact .contact-wrap{padding:32px 18px}
+  .contact-actions{display:grid;grid-template-columns:1fr;gap:10px}
+  .contact-actions .btn{width:100%;justify-content:center;overflow-wrap:anywhere;text-align:center}
+}
