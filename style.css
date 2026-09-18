@@ -527,3 +527,9 @@ footer .logo{font-size:18px;margin-bottom:8px}
   .fb2{bottom:24px !important;left:calc(50% - 138px) !important}
   .fb3{top:72px !important;right:calc(50% - 136px) !important}
 }
+
+
+/* Compact mobile hero spacing after portrait */
+@media screen and (max-width:560px){
+  .hero-visual{margin-bottom:-24px !important}
+}
