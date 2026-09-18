@@ -416,3 +416,57 @@ footer .logo{font-size:18px;margin-bottom:8px}
   .lightbox-prev{left:8px}
   .lightbox-next{right:8px}
 }
+
+
+/* ---------- Mobile layout correction v2 ---------- */
+@media screen and (max-width:560px){
+  /* Hero: keep the portrait strong but bring content above the fold */
+  .hero{padding:82px 0 44px !important}
+  .hero-grid{gap:16px !important}
+  .hero-visual{height:235px;min-height:235px;margin:0 auto 8px !important;align-items:center}
+  .avatar-ring{width:180px !important;height:180px !important;padding:4px}
+  .floating-badge{padding:7px 10px !important;border-radius:12px !important;font-size:11px !important}
+  .floating-badge .ic{font-size:14px !important;margin-right:3px}
+  .fb1{top:18px !important;left:calc(50% - 132px) !important}
+  .fb2{bottom:28px !important;left:calc(50% - 138px) !important}
+  .fb3{top:66px !important;right:calc(50% - 136px) !important}
+  .hero-eyebrow{margin:0 0 12px !important;padding:6px 12px !important;font-size:11px !important}
+  .hero h1{font-size:clamp(2.2rem,10.5vw,2.8rem) !important;line-height:1.03 !important;margin-bottom:14px !important}
+  .hero p.lead{font-size:15px !important;line-height:1.5 !important;margin-bottom:20px !important}
+  .hero-actions{margin-bottom:22px !important}
+  .hero-stats{gap:12px 14px !important}
+
+  /* Work: reduce the empty area before projects */
+  #work.section{padding-top:54px !important}
+  #work .section-head{margin-bottom:22px !important}
+  #work .section-head h2{font-size:2.1rem !important}
+  #work .section-head p{font-size:14px !important;line-height:1.5 !important}
+
+  /* Force one horizontal filter rail on narrow phones */
+  #work .filters{
+    display:flex !important;
+    width:calc(100% + 36px) !important;
+    max-width:none !important;
+    flex-flow:row nowrap !important;
+    justify-content:flex-start !important;
+    align-items:center !important;
+    overflow-x:scroll !important;
+    overflow-y:hidden !important;
+    gap:8px !important;
+    margin:0 -18px 22px !important;
+    padding:2px 18px 10px !important;
+    scrollbar-width:none !important;
+    -webkit-overflow-scrolling:touch;
+  }
+  #work .filters::-webkit-scrollbar{display:none !important}
+  #work .filter-btn{
+    display:inline-flex !important;
+    flex:0 0 auto !important;
+    width:auto !important;
+    min-width:max-content !important;
+    margin:0 !important;
+    padding:8px 14px !important;
+    font-size:11px !important;
+    white-space:nowrap !important;
+  }
+}
