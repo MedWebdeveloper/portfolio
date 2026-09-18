@@ -513,3 +513,17 @@ footer .logo{font-size:18px;margin-bottom:8px}
   .contact-actions{display:grid;grid-template-columns:1fr;gap:10px}
   .contact-actions .btn{width:100%;justify-content:center;overflow-wrap:anywhere;text-align:center}
 }
+
+
+/* Mobile hero/header overlap fix */
+@media screen and (max-width:560px){
+  /* Reserve a clean header zone before the portrait. */
+  .hero{padding-top:92px !important}
+  .hero-visual{height:250px;min-height:250px;margin:10px auto 12px !important}
+  .avatar-ring{width:180px !important;height:180px !important}
+
+  /* Keep skill badges inside the hero visual, away from the logo/menu. */
+  .fb1{top:24px !important;left:calc(50% - 132px) !important}
+  .fb2{bottom:24px !important;left:calc(50% - 138px) !important}
+  .fb3{top:72px !important;right:calc(50% - 136px) !important}
+}
