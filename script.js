@@ -12,6 +12,23 @@
 */
 const PROJECTS = [
   {
+    title:"JCIS — Campaign Intelligence Dashboard",
+    cat:"uiux",
+    catLabel:"Product Design · React Application",
+    cover:"images/thumbs/cover-jcis.svg",
+    short:"A responsive campaign-intelligence dashboard that reconciles Shopify and advertising signals into explainable decisions.",
+    type:"Product design case study + live React application",
+    tools:"Figma, React, TypeScript, Vite, responsive design",
+    year:"2026",
+    challenge:"JCIS transforms fragmented e-commerce signals into a clear decision workflow. I designed the information architecture, reusable component system, desktop and mobile states, campaign comparison, attribution-discrepancy analysis, creative-learning library and an explainable decision center. I then implemented the interface in React and TypeScript with typed data, state-driven filters, reusable components and responsive behavior. The demonstration uses anonymized sample data inspired by a real e-commerce learning context.",
+    tags:["Product Design","Figma","React","TypeScript","Analytics"],
+    link:"projects/jcis/index.html",
+    linkLabel:"Open the interactive dashboard →",
+    gallery:[
+      "images/thumbs/cover-jcis.svg"
+    ]
+  },
+  {
     title:"ShopEase — E-commerce App Concept",
     cat:"uiux",
     catLabel:"UI/UX · Mobile App",
