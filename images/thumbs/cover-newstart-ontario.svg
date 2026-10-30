@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+<rect width="1200" height="800" rx="36" fill="#F8F5EC"/>
+<circle cx="1010" cy="100" r="260" fill="#DCEEE7"/>
+<rect x="70" y="70" width="54" height="54" rx="16" fill="#153E35"/>
+<path d="M97 79 103 92 113 86 110 99 122 97 114 108 124 113 107 119 110 133 98 127 97 141 95 127 83 133 86 119 70 113 80 108 72 97 85 99 82 86 92 92Z" fill="#EA765F" transform="translate(0 -5)"/>
+<text x="142" y="108" font-family="Arial,sans-serif" font-size="28" font-weight="700" fill="#153E35">NewStart Ontario</text>
+<text x="74" y="250" font-family="Georgia,serif" font-size="66" font-weight="700" fill="#153E35">Find the right support.</text>
+<text x="74" y="330" font-family="Georgia,serif" font-size="66" font-weight="700" fill="#2F725F">Take your next step.</text>
+<text x="78" y="390" font-family="Arial,sans-serif" font-size="22" fill="#52615C">A bilingual services navigator for newcomers in Ontario.</text>
+<rect x="74" y="450" width="245" height="66" rx="14" fill="#153E35"/>
+<text x="111" y="492" font-family="Arial,sans-serif" font-size="21" font-weight="700" fill="#FFFFFF">Build my plan →</text>
+<rect x="670" y="180" width="410" height="450" rx="28" fill="#FFFFFF" stroke="#D6DED9" stroke-width="2"/>
+<text x="710" y="230" font-family="Arial,sans-serif" font-size="15" font-weight="700" fill="#2F725F">YOUR SETTLEMENT PLAN</text>
+<text x="710" y="285" font-family="Georgia,serif" font-size="34" font-weight="700" fill="#153E35">Welcome to London</text>
+<rect x="710" y="330" width="330" height="65" rx="14" fill="#DCEEE7"/>
+<text x="735" y="371" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#153E35">✓ Apply for your health card</text>
+<rect x="710" y="415" width="330" height="65" rx="14" fill="#F8F5EC"/>
+<text x="735" y="456" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#153E35">2  Find settlement support</text>
+<rect x="710" y="500" width="330" height="65" rx="14" fill="#F8F5EC"/>
+<text x="735" y="541" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#153E35">3  Prepare for work</text>
+<text x="74" y="725" font-family="Arial,sans-serif" font-size="18" font-weight="700" letter-spacing="3" fill="#2F725F">PRODUCT DESIGN · ACCESSIBILITY · RESPONSIVE UI</text>
+</svg>
