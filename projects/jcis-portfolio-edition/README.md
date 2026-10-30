@@ -2,9 +2,9 @@
 
 JCIS is an interactive campaign-intelligence dashboard that turns fragmented Shopify and advertising data into explainable decisions.
 
-## Live demo
+## Interactive demo
 
-https://jcis-portfolio-edition.mythicmink38.chatgpt.site
+The interactive demonstration is currently being prepared for publication on the author's portfolio domain. The complete React/TypeScript source is available in this folder.
 
 ## The problem
 
