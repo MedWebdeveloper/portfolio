@@ -4,7 +4,7 @@ JCIS is an interactive campaign-intelligence dashboard that turns fragmented Sho
 
 ## Live demo
 
-https://jcis-portfolio-edition.mythicmink38.chatgpt.site
+https://medardkiteretse.com/projects/jcis/
 
 ## The problem
 
