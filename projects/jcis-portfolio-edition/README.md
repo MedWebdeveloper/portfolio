@@ -4,7 +4,7 @@ JCIS is an interactive campaign-intelligence dashboard that turns fragmented Sho
 
 ## Interactive demo
 
-The interactive demonstration is currently being prepared for publication on the author's portfolio domain. The complete React/TypeScript source is available in this folder.
+https://medardkiteretse.com/projects/jcis/
 
 ## The problem
 
