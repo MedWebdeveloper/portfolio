@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">JCIS Campaign Intelligence Dashboard</title>
+  <desc id="desc">Dark green campaign dashboard with metric cards, chart and decision panel.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0d282d"/><stop offset="1" stop-color="#17474a"/></linearGradient>
+    <filter id="shadow"><feDropShadow dx="0" dy="18" stdDeviation="20" flood-opacity=".22"/></filter>
+  </defs>
+  <rect width="1200" height="760" rx="34" fill="#f4f7f4"/>
+  <rect x="58" y="48" width="1084" height="664" rx="26" fill="#fff" filter="url(#shadow)"/>
+  <rect x="58" y="48" width="230" height="664" rx="26" fill="url(#bg)"/>
+  <rect x="264" y="48" width="24" height="664" fill="#0d282d"/>
+  <rect x="86" y="82" width="48" height="48" rx="14" fill="#d7f85d"/>
+  <text x="151" y="111" fill="#fff" font-family="Arial,sans-serif" font-size="26" font-weight="700">JCIS</text>
+  <text x="151" y="130" fill="#91aaa6" font-family="Arial,sans-serif" font-size="11">Portfolio Edition</text>
+  <g font-family="Arial,sans-serif" font-size="15" fill="#a8bdb9">
+    <rect x="80" y="176" width="186" height="48" rx="10" fill="#1b464b"/><text x="111" y="206" fill="#d7f85d" font-weight="700">Overview</text>
+    <text x="111" y="267">Campaigns</text><text x="111" y="322">Data discrepancy</text><text x="111" y="377">Creative library</text><text x="111" y="432">Decision center</text>
+  </g>
+  <text x="334" y="95" fill="#0e7c66" font-family="Arial,sans-serif" font-size="12" font-weight="700" letter-spacing="1">DEMO BEAUTY STORE</text>
+  <text x="334" y="130" fill="#102a2f" font-family="Arial,sans-serif" font-size="28" font-weight="700">Campaign overview</text>
+  <text x="334" y="185" fill="#102a2f" font-family="Arial,sans-serif" font-size="30" font-weight="700">Know what is working before spending more.</text>
+  <g font-family="Arial,sans-serif">
+    <g transform="translate(334 226)"><rect width="148" height="104" rx="14" fill="#f8faf8" stroke="#dfe8e3"/><text x="17" y="29" font-size="12" fill="#637477">Ad spend</text><text x="17" y="62" font-size="25" font-weight="700" fill="#102a2f">$5,024</text><text x="17" y="86" font-size="11" fill="#d9655b">+8.4%</text></g>
+    <g transform="translate(496 226)"><rect width="148" height="104" rx="14" fill="#f8faf8" stroke="#dfe8e3"/><text x="17" y="29" font-size="12" fill="#637477">Purchases</text><text x="17" y="62" font-size="25" font-weight="700" fill="#102a2f">26</text><text x="17" y="86" font-size="11" fill="#0e7c66">+4 verified</text></g>
+    <g transform="translate(658 226)"><rect width="148" height="104" rx="14" fill="#f8faf8" stroke="#dfe8e3"/><text x="17" y="29" font-size="12" fill="#637477">Average CTR</text><text x="17" y="62" font-size="25" font-weight="700" fill="#102a2f">1.34%</text><text x="17" y="86" font-size="11" fill="#d9655b">Target 3%</text></g>
+    <g transform="translate(820 226)"><rect width="148" height="104" rx="14" fill="#f8faf8" stroke="#dfe8e3"/><text x="17" y="29" font-size="12" fill="#637477">Verified CPA</text><text x="17" y="62" font-size="25" font-weight="700" fill="#102a2f">$193</text><text x="17" y="86" font-size="11" fill="#d9655b">Needs review</text></g>
+  </g>
+  <rect x="334" y="356" width="510" height="290" rx="18" fill="#fff" stroke="#dfe8e3"/>
+  <text x="360" y="393" fill="#0e7c66" font-family="Arial,sans-serif" font-size="11" font-weight="700">PERFORMANCE</text>
+  <text x="360" y="421" fill="#102a2f" font-family="Arial,sans-serif" font-size="18" font-weight="700">Spend vs. attributed revenue</text>
+  <g transform="translate(372 466)"><rect width="24" height="130" rx="5" fill="#102a2f"/><rect x="31" y="70" width="24" height="60" rx="5" fill="#d7f85d"/><rect x="78" y="30" width="24" height="100" rx="5" fill="#102a2f"/><rect x="109" y="50" width="24" height="80" rx="5" fill="#d7f85d"/><rect x="156" y="0" width="24" height="130" rx="5" fill="#102a2f"/><rect x="187" y="36" width="24" height="94" rx="5" fill="#d7f85d"/><rect x="234" y="48" width="24" height="82" rx="5" fill="#102a2f"/><rect x="265" y="16" width="24" height="114" rx="5" fill="#d7f85d"/><rect x="312" y="20" width="24" height="110" rx="5" fill="#102a2f"/><rect x="343" y="58" width="24" height="72" rx="5" fill="#d7f85d"/></g>
+  <rect x="864" y="356" width="240" height="290" rx="18" fill="#102a2f"/>
+  <text x="891" y="396" fill="#d7f85d" font-family="Arial,sans-serif" font-size="11" font-weight="700">DECISION CENTER</text>
+  <text x="891" y="438" fill="#fff" font-family="Arial,sans-serif" font-size="25" font-weight="700">OPTIMIZE</text>
+  <text x="891" y="476" fill="#b8cac7" font-family="Arial,sans-serif" font-size="14">Keep the product.</text><text x="891" y="499" fill="#b8cac7" font-family="Arial,sans-serif" font-size="14">Repair measurement.</text>
+  <rect x="891" y="548" width="172" height="48" rx="10" fill="#d7f85d"/><text x="921" y="578" fill="#102a2f" font-family="Arial,sans-serif" font-size="13" font-weight="700">Review decision →</text>
+</svg>
