@@ -12,6 +12,23 @@
 */
 const PROJECTS = [
   {
+    title:"NewStart Ontario — Services Navigator",
+    cat:"uiux",
+    catLabel:"Product Design · Accessible Web Application",
+    cover:"images/thumbs/cover-newstart-ontario.svg",
+    short:"A bilingual, accessible navigator that helps newcomers find trusted Ontario services and build a personalized settlement plan.",
+    type:"Product design case study + interactive responsive application",
+    tools:"Figma, Auto Layout, Components, Variants, HTML, CSS, JavaScript",
+    year:"2026",
+    challenge:"Newcomers often need employment, housing, healthcare, language, legal and family support at the same time, but information is fragmented across organizations. I designed NewStart Ontario to turn that complexity into a four-step guided assessment and a clear personalized plan. The Figma system includes 15 variables, reusable Auto Layout components, button and selection-card variants, desktop and mobile states, and developer handoff foundations. I then implemented the responsive, keyboard-friendly interactive experience with semantic HTML, CSS and JavaScript.",
+    tags:["Product Design","Accessibility","Figma","Responsive UX","Service Design"],
+    link:"projects/newstart-ontario/index.html",
+    linkLabel:"Open the interactive navigator →",
+    gallery:[
+      "images/thumbs/cover-newstart-ontario.svg"
+    ]
+  },
+  {
     title:"JCIS — Campaign Intelligence Dashboard",
     cat:"uiux",
     catLabel:"Product Design · React Application",

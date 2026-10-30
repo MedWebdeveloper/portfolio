@@ -1,0 +1,12 @@
+.brandmark {
+  width: 36px;
+  height: 36px;
+  font-family: inherit;
+  font-size: 0;
+}
+
+.brandmark svg {
+  width: 21px;
+  height: 23px;
+  fill: var(--coral);
+}
