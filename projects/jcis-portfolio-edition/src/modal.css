@@ -1,0 +1,13 @@
+.modal-backdrop {
+  position: fixed; inset: 0; z-index: 80; display: grid; place-items: center;
+  padding: 15px; background: rgba(9, 30, 34, .62); backdrop-filter: blur(5px);
+}
+.modal {
+  position: relative; width: min(760px, 100%); max-height: 90vh; overflow: auto;
+  background: #fff; border-radius: 20px; padding: 32px;
+  box-shadow: 0 30px 100px rgba(0, 0, 0, .25);
+}
+.modal h2 { font: 800 30px Manrope; margin: 7px 0 20px; }
+.modal h3 { font: 800 16px Manrope; margin: 24px 0 6px; }
+.modal p { color: var(--muted); line-height: 1.6; }
+.toast { z-index: 90; }
