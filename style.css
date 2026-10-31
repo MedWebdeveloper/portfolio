@@ -533,3 +533,9 @@ footer .logo{font-size:18px;margin-bottom:8px}
 @media screen and (max-width:560px){
   .hero-visual{margin-bottom:-24px !important}
 }
+
+
+/* Refine hero headline scale on small phones */
+@media screen and (max-width:560px){
+  .hero h1{font-size:clamp(2.7rem,12.5vw,3.35rem) !important;line-height:1.08 !important}
+}
